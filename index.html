@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags Essenciais -->
+    <meta name="description" content="Felipe Augusto (Liperaon) - Full Stack Developer. Especialista em React, Node.js, Python e Automação.">
+    <meta name="keywords" content="Felipe Augusto, Liperaon, Full Stack Developer, Desenvolvedor Web, Automação, React, Node.js, Python, Portfólio">
+    <meta name="author" content="Felipe Augusto">
+    
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://felipe.dev/">
+    <meta property="og:title" content="Felipe Augusto | Full Stack Developer">
+    <meta property="og:description" content="Portfólio de Felipe Augusto. Desenvolvimento Full Stack, Bots de Automação e Sistemas Financeiros.">
+    <meta property="og:image" content="https://i.postimg.cc/PJNttRJT/494151353-9655126271191690-7703902888335911926-n.jpg">
+    
+    <title data-i18n="page_title">Felipe Augusto | Full Stack Developer</title>
+    
+    <!-- Favicon Atualizado com a URL fornecida -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/HrMVYW2g/Chat-GPT-Image-19-de-abr-de-2026-22-11-20.png">
+    
+    <!-- Tipografia Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        base: {
+                            900: '#050505',
+                            800: '#0a0a0a',
+                            700: '#141414',
+                            600: '#262626',
+                        },
+                        accent: {
+                            primary: '#6366f1', // Indigo 500
+                            secondary: '#06b6d4', // Cyan 500
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050505;
+            color: #ededed;
+        }
+
+        /* Fundo com padrão de pontos (Dot Grid) */
+        .bg-dots {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Efeito de Vidro e Bento Cards */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .bento-card {
+            background: linear-gradient(145deg, rgba(20,20,20,1) 0%, rgba(10,10,10,1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 1.5rem;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(6, 182, 212, 0.1), transparent 50%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .bento-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Scroll Reveal (Animado via JS) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Links do Menu Ativos */
+        .nav-link.active-section {
+            color: #ffffff;
+            font-weight: 700;
+        }
+        .nav-link.active-section::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #6366f1;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+        
+        ::selection { background: rgba(99, 102, 241, 0.3); color: white; }
+    </style>
+</head>
+<body id="inicio" class="antialiased selection:bg-indigo-500/30 selection:text-white relative bg-dots">
+
+    <!-- Efeitos de Luz de Fundo -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-[-1]" aria-hidden="true">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-[30%] h-[30%] bg-cyan-600/20 rounded-full blur-[120px] animate-blob" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navbar Floating (Estilo Cápsula) -->
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl glass-panel rounded-full px-6 py-3 transition-all duration-300">
+        <nav class="flex justify-between items-center" aria-label="Navegação principal">
+            
+            <!-- Nova Imagem de Logo com URL -->
+            <a href="#inicio" class="outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg flex items-center" aria-label="Voltar ao início">
+                <img src="https://i.postimg.cc/HrMVYW2g/Chat-GPT-Image-19-de-abr-de-2026-22-11-20.png" alt="Logótipo Felipe" class="h-12 sm:h-16 w-auto object-contain transition-transform hover:scale-105" referrerpolicy="no-referrer">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 items-center text-sm font-medium">
+                <a href="#sobremim" class="nav-link relative text-gray-400 hover:text-white transition-colors" data-i18n="nav_about">Sobre</a>
+                <a href="#servicos" class="nav-link relative text-gray-400 hover:text-white transition-colors" data-i18n="nav_services">O que faço</a>
+                <a href="#portfolio" class="nav-link relative text-gray-400 hover:text-white transition-colors" data-i18n="nav_portfolio">Projetos</a>
+                
+                <!-- Ícone do GitHub no Navbar -->
+                <a href="https://github.com/Liperaaon" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors ml-2 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-sm" aria-label="Perfil do GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                </a>
+
+                <div class="w-px h-4 bg-white/10" aria-hidden="true"></div>
+                
+                <!-- Language Selector Moderno (Pills) -->
+                <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-1 gap-1" role="group" aria-label="Seleção de Idioma">
+                    <button onclick="setLanguage('pt')" data-lang="pt" class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold transition-all text-gray-400 hover:text-white" aria-label="Mudar idioma para Português">PT</button>
+                    <button onclick="setLanguage('en')" data-lang="en" class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold transition-all text-gray-400 hover:text-white" aria-label="Change language to English">EN</button>
+                    <button onclick="setLanguage('es')" data-lang="es" class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold transition-all text-gray-400 hover:text-white" aria-label="Cambiar idioma a Español">ES</button>
+                </div>
+
+                <a href="#contato" class="bg-white text-black hover:bg-gray-200 px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" data-i18n="nav_contact">
+                    Contato
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu de navegação">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-4 glass-panel rounded-2xl p-4 flex flex-col gap-4 border border-white/10 shadow-xl">
+            <a href="#sobremim" class="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-white/5 transition" data-i18n="nav_about" onclick="toggleMobileMenu()">Sobre Mim</a>
+            <a href="#servicos" class="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-white/5 transition" data-i18n="nav_services" onclick="toggleMobileMenu()">O que faço</a>
+            <a href="#portfolio" class="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-white/5 transition" data-i18n="nav_portfolio" onclick="toggleMobileMenu()">Projetos</a>
+            <div class="h-px bg-white/10 my-1" aria-hidden="true"></div>
+            
+            <!-- Language Selector Mobile Moderno -->
+            <div class="flex items-center justify-between bg-base-800 border border-white/10 rounded-lg p-1">
+                <button onclick="setLanguage('pt'); toggleMobileMenu();" data-lang="pt" class="lang-btn flex-1 py-2 rounded-md text-sm font-bold transition-all text-gray-400 hover:text-white">PT</button>
+                <button onclick="setLanguage('en'); toggleMobileMenu();" data-lang="en" class="lang-btn flex-1 py-2 rounded-md text-sm font-bold transition-all text-gray-400 hover:text-white">EN</button>
+                <button onclick="setLanguage('es'); toggleMobileMenu();" data-lang="es" class="lang-btn flex-1 py-2 rounded-md text-sm font-bold transition-all text-gray-400 hover:text-white">ES</button>
+            </div>
+
+            <a href="#contato" class="bg-indigo-600 text-white text-center p-3 rounded-xl font-bold mt-2" data-i18n="nav_contact" onclick="toggleMobileMenu()">Contato</a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="min-h-[85vh] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal active" id="hero">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10 mb-8 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" aria-hidden="true"></span>
+                    <p class="text-xs font-semibold text-indigo-300 uppercase tracking-widest" data-i18n="hero_tag">
+                        Disponível para novas oportunidades
+                    </p>
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold leading-[1.1] mb-6 tracking-tight text-white">
+                    <span data-i18n="hero_title_part1">Desenvolvedor</span><br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500" data-i18n="hero_title_part2">Full Stack.</span>
+                </h1>
+                
+                <p class="text-lg md:text-2xl text-gray-400 mb-10 max-w-2xl font-light leading-relaxed" data-i18n="hero_subtitle">
+                    Especialista em construir aplicações web modernas, bots de automação e sistemas robustos com foco em performance e código limpo.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contato" class="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-white px-8 font-bold text-black transition-all hover:scale-105" data-i18n="hero_cta_start">
+                        Entrar em Contato
+                        <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                    <a href="#portfolio" class="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-transparent px-8 font-bold text-white transition-all hover:bg-white/5" data-i18n="hero_cta_view">
+                        Explorar Portfólio
+                    </a>
+                    
+                    <a href="./Felipe_Augusto_CV.pdf" download="Felipe_Augusto_CV.pdf" class="inline-flex h-14 items-center justify-center rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 px-8 font-bold transition-all hover:bg-indigo-500/20" data-i18n="hero_cta_cv">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me & Timeline (Bento Grid Style) -->
+        <section id="sobremim" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-white">
+                <span class="text-indigo-400">/</span> <span data-i18n="nav_about">Sobre Mim</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Main Bio Card -->
+                <div class="bento-card col-span-1 md:col-span-2 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center justify-center">
+                    
+                    <!-- Profile Picture -->
+                    <div class="w-32 h-32 md:w-48 md:h-48 shrink-0 rounded-full overflow-hidden border-4 border-base-800 shadow-[0_0_30px_rgba(99,102,241,0.2)] relative group transition-transform duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-indigo-500/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none"></div>
+                        <img src="https://i.postimg.cc/PJNttRJT/494151353-9655126271191690-7703902888335911926-n.jpg" alt="Foto de Perfil de Felipe Augusto" class="w-full h-full object-cover relative z-0">
+                    </div>
+
+                    <!-- Bio Text -->
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="about_subtitle">Olá, eu sou Felipe (Liperaon)</h3>
+                        <div class="space-y-4 text-gray-400 leading-relaxed">
+                            <p data-i18n="about_p1">Sou estudante de Análise e Desenvolvimento de Sistemas e desenvolvedor Full Stack apaixonado por tecnologia. Construo aplicações completas (do front-end ao back-end) e automações de processos. Tenho 25 anos, sou PCD (Certificado de Discapacidad), e busco sempre escrever código sustentável e escalável.</p>
+                            <p data-i18n="about_p2">Além da minha base técnica (React, Node, Python), tenho experiência operacional premiada no setor de Private Banking, o que me deu uma visão apurada sobre segurança, conformidade de dados e resolução de problemas. Atualmente, estou em busca de novas oportunidades e desafios para integrar equipes de tecnologia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stack & Languages Card -->
+                <div class="bento-card col-span-1 p-8 bg-gradient-to-br from-base-800 to-indigo-900/10 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2" data-i18n="stack_title">
+                            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Tech Stack
+                        </h4>
+                        <div class="flex flex-wrap gap-2 mb-8" aria-label="Tecnologias dominadas">
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 hover:border-indigo-400 transition-colors">React.js</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 hover:border-indigo-400 transition-colors">Node.js</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 hover:border-indigo-400 transition-colors">Python</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 hover:border-indigo-400 transition-colors">Tailwind</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 hover:border-indigo-400 transition-colors">Javascript (ES6+)</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 hover:border-indigo-400 transition-colors">Firebase</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold text-white mb-4 flex items-center gap-2" data-i18n="lang_title">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                            Idiomas
+                        </h4>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex justify-between items-center bg-white/5 border border-white/10 px-3 py-2 rounded-lg">
+                                <span class="text-sm text-gray-300" data-i18n="lang_pt">Português</span>
+                                <span class="text-xs font-bold text-indigo-400 bg-indigo-900/30 px-2 py-0.5 rounded">Native</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-white/5 border border-white/10 px-3 py-2 rounded-lg">
+                                <span class="text-sm text-gray-300" data-i18n="lang_es">Espanhol</span>
+                                <span class="text-xs font-bold text-cyan-400 bg-cyan-900/30 px-2 py-0.5 rounded">C1 Fluent</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-white/5 border border-white/10 px-3 py-2 rounded-lg">
+                                <span class="text-sm text-gray-300" data-i18n="lang_en">Inglês</span>
+                                <span class="text-xs font-bold text-gray-400 bg-white/10 px-2 py-0.5 rounded">B2 Upper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience Timeline Card -->
+                <div class="bento-card col-span-1 md:col-span-2 p-8 md:p-12">
+                    <h4 class="text-2xl font-bold text-white mb-8 flex items-center gap-3" data-i18n="exp_title">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Trajetória Profissional
+                    </h4>
+                    
+                    <div class="relative border-l border-white/10 ml-3 space-y-8">
+                        
+                        <!-- Timeline Item 1 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[5px] top-1.5 w-[10px] h-[10px] rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                                <h5 class="text-lg font-bold text-white" data-i18n="exp1_role">Full Stack Developer</h5>
+                                <span class="text-xs font-mono text-indigo-400 bg-indigo-900/20 px-2 py-1 rounded" data-i18n="exp1_date">Nov 2024 - Presente</span>
+                            </div>
+                            <h6 class="text-sm font-medium text-gray-400 mb-3" data-i18n="exp1_company">Projetos Pessoais & Freelance</h6>
+                            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="exp1_desc">Desenvolvimento e manutenção de aplicações web full-stack utilizando React e Node.js. Implementação de integrações via APIs, além do desenvolvimento de bots automatizados em Python para otimização de fluxos.</p>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[5px] top-1.5 w-[10px] h-[10px] rounded-full bg-base-600 border-2 border-base-900"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                                <h5 class="text-lg font-bold text-white" data-i18n="exp2_role">Private Banking Operations</h5>
+                                <span class="text-xs font-mono text-gray-400 bg-white/5 px-2 py-1 rounded" data-i18n="exp2_date">Ago 2024 - Presente</span>
+                            </div>
+                            <h6 class="text-sm font-medium text-cyan-400 mb-3" data-i18n="exp2_company">Meta S/A</h6>
+                            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="exp2_desc">Suporte diário a operações financeiras complexas, com foco no processamento de dados e rígida conformidade regulatória. Elaboração de relatórios técnicos e análise de informações críticas.</p>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[5px] top-1.5 w-[10px] h-[10px] rounded-full bg-base-600 border-2 border-base-900"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                                <h5 class="text-lg font-bold text-white" data-i18n="exp3_role">Customer Service Rep (Tech Support)</h5>
+                                <span class="text-xs font-mono text-gray-400 bg-white/5 px-2 py-1 rounded" data-i18n="exp3_date">Mar 2023 - Presente</span>
+                            </div>
+                            <h6 class="text-sm font-medium text-gray-400 mb-3" data-i18n="exp3_company">Winover Call Center</h6>
+                            <p class="text-sm text-gray-500 leading-relaxed" data-i18n="exp3_desc">Suporte técnico de primeiro nível e atendimento a clientes para resolução de problemas com produtos e sistemas. Foco em comunicação clara e resolução ágil de chamados técnicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Awards Card -->
+                <div class="bento-card col-span-1 p-8 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-6 flex items-center gap-2" data-i18n="edu_title">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                            Educação & Conquistas
+                        </h4>
+                        
+                        <div class="space-y-5">
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-xl">
+                                <span class="text-xs font-mono text-indigo-400 mb-1 block" data-i18n="edu1_date">Jan 2024 - Atual</span>
+                                <h5 class="text-sm font-bold text-white mb-1" data-i18n="edu1_course">Análise e Desenv. de Sistemas</h5>
+                                <p class="text-xs text-gray-400" data-i18n="edu1_school">Cruzeiro do Sul (Bacharelado)</p>
+                            </div>
+
+                            <div class="bg-white/5 border border-white/10 p-4 rounded-xl">
+                                <h5 class="text-sm font-bold text-white mb-1" data-i18n="edu2_course">Web Design & Manutenção TI</h5>
+                                <p class="text-xs text-gray-400" data-i18n="edu2_school">Microlins (Formação Técnica)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-white/10">
+                        <div class="flex items-start gap-3">
+                            <div class="mt-1 p-2 bg-yellow-500/10 rounded-lg text-yellow-500" aria-hidden="true">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white mb-1" data-i18n="award_title">100% Goal Achievement</h5>
+                                <p class="text-xs text-gray-400 leading-relaxed" data-i18n="award_desc">Reconhecimento recebido por superar métricas de qualidade e manter a consistência nas entregas do time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call To Action (Bottom Row) -->
+                <div class="bento-card col-span-1 md:col-span-3 p-8 flex items-center justify-between group overflow-hidden relative">
+                    <div class="absolute right-0 top-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl group-hover:bg-indigo-500/20 transition-all duration-500" aria-hidden="true"></div>
+                    <div class="relative z-10 w-full flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div>
+                            <h4 class="text-2xl font-bold text-white mb-2" data-i18n="mid_cta_title">Gostou do meu perfil?</h4>
+                            <p class="text-gray-400" data-i18n="mid_cta_subtitle">Estou sempre aberto a conversar sobre tecnologia e código.</p>
+                        </div>
+                        <a href="#contato" class="inline-flex items-center justify-center bg-white text-black font-bold px-8 py-4 rounded-full hover:scale-105 transition-transform whitespace-nowrap shadow-lg shadow-white/10" data-i18n="mid_cta_btn">
+                            Entrar em Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                <span class="text-indigo-400">/</span> <span data-i18n="services_title_part2">O que eu faço</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-12 max-w-2xl" data-i18n="services_subtitle">
+                Áreas em que concentro meus estudos e aplicações práticas como desenvolvedor.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bento-card p-8 flex flex-col h-full">
+                    <div class="mb-auto">
+                        <svg class="w-8 h-8 text-indigo-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        <h3 class="text-xl font-bold mb-3 text-white" data-i18n="service1_title">Desenvolvimento Web</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service1_desc">Criação de aplicações web modernas e responsivas utilizando React no Front-end e Node.js no Back-end.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bento-card p-8 flex flex-col h-full">
+                    <div class="mb-auto">
+                        <svg class="w-8 h-8 text-cyan-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                        <h3 class="text-xl font-bold mb-3 text-white" data-i18n="service2_title">Scripts & Automações</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service2_desc">Desenvolvimento de bots (como o Store Bot Pro no Telegram) e scripts em Python para automatizar tarefas repetitivas e integrar APIs.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bento-card p-8 flex flex-col h-full">
+                    <div class="mb-auto">
+                        <svg class="w-8 h-8 text-indigo-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 0l-3.536 3.536m3.536-3.536L5.636 18.364M5.636 5.636l3.536 3.536m0 0l3.536 3.536m-3.536-3.536L18.364 18.364M12 10a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                        <h3 class="text-xl font-bold mb-3 text-white" data-i18n="service3_title">Manutenção de Sistemas</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed" data-i18n="service3_desc">Atuação em plataformas que demandam controle de dados rigoroso, refatoração de código legado e correções de bugs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal scroll-mt-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                        <span class="text-indigo-400">/</span> <span data-i18n="portfolio_title_part2">Projetos em Destaque</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg max-w-xl" data-i18n="portfolio_subtitle">
+                        Alguns dos trabalhos que desenvolvi aplicando meus conhecimentos técnicos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1 (Large) -->
+                <a href="https://github.com/Liperaaon" target="_blank" rel="noopener noreferrer" class="block bento-card col-span-1 md:col-span-2 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-[1.5rem]" aria-label="Ver projeto Aura Pix & Liberta">
+                    <div class="flex flex-col md:flex-row h-full">
+                        <div class="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
+                            <div class="flex gap-2 mb-4">
+                                <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-indigo-300 font-mono">React</span>
+                                <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-indigo-300 font-mono">Node.js</span>
+                                <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-indigo-300 font-mono">Fintech</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">Aura Pix & Liberta</h3>
+                            <p class="text-gray-400 leading-relaxed mb-8" data-i18n="port1_desc">Aplicações financeiras desenvolvidas para gestão de finanças. O foco destes projetos foi a arquitetura de banco de dados, segurança na troca de informações e criação de interfaces responsivas.</p>
+                            <span class="inline-flex items-center text-sm font-bold text-white group-hover:text-indigo-400">
+                                Ver Repositório <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </span>
+                        </div>
+                        <div class="md:w-1/2 bg-base-800/50 p-8 border-l border-white/5 flex items-center justify-center relative overflow-hidden" aria-hidden="true">
+                            <div class="w-full aspect-[4/3] rounded-xl bg-gradient-to-tr from-indigo-900/40 to-cyan-900/40 border border-white/10 shadow-2xl flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
+                                <div class="w-24 h-24 rounded-full bg-indigo-500/20 flex items-center justify-center blur-md"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2 -->
+                <a href="https://github.com/Liperaaon" target="_blank" rel="noopener noreferrer" class="block bento-card p-8 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-[1.5rem] h-full" aria-label="Ver projeto Store Bot Pro">
+                    <div class="flex gap-2 mb-6">
+                        <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-cyan-300 font-mono">Python</span>
+                        <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-cyan-300 font-mono">Telegram API</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors" data-i18n="port2_title">Store Bot Pro</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="port2_desc">Script em Python que se conecta com a API do Telegram para servir como um assistente virtual, processando comandos dos usuários automaticamente.</p>
+                    <span class="inline-flex items-center text-sm font-bold text-gray-500 group-hover:text-cyan-400 transition-colors mt-auto pt-4">
+                        Ver Código Fonte <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </span>
+                </a>
+
+                <!-- Project 3 -->
+                <a href="https://github.com/Liperaaon" target="_blank" rel="noopener noreferrer" class="block bento-card p-8 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-white rounded-[1.5rem] h-full" aria-label="Ver projeto Nexus Dashboard">
+                    <div class="flex gap-2 mb-6">
+                        <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-300 font-mono">Next.js</span>
+                        <span class="px-2 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-300 font-mono">Tailwind</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors" data-i18n="port3_title">Nexus Dashboard</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="port3_desc">Uma interface de usuário (UI) focada em painéis de controle, construída para apresentar dados de forma clara, utilizando boas práticas de componentização.</p>
+                    <span class="inline-flex items-center text-sm font-bold text-gray-500 group-hover:text-white transition-colors mt-auto pt-4">
+                        Ver Código Fonte <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal scroll-mt-20">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-tight">
+                <span data-i18n="contact_title_part1">Vamos</span> <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400" data-i18n="contact_title_part2">conversar?</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto" data-i18n="contact_subtitle">
+                Aberto a novas oportunidades na área de tecnologia. Sinta-se à vontade para me mandar uma mensagem pelas plataformas abaixo.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+                <!-- Botão Email -->
+                <a href="mailto:felipe_mx@hotmail.com" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-black bg-white hover:bg-gray-200 transition-all transform hover:scale-105">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.848 5.232a1 1 0 001.296 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <span data-i18n="contact_email_btn">Enviar E-mail</span>
+                </a>
+                
+                <!-- Botão WhatsApp -->
+                <a href="#" onclick="openWhatsAppModal(event)" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:bg-white/5 transition-all">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    WhatsApp
+                </a>
+
+                <!-- Botão LinkedIn -->
+                <a href="https://www.linkedin.com/in/liperaon" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:bg-white/5 transition-all">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.297-4 0v5.604h-3v-11h3v1.765c1.397-2.678 6-2.502 6 2.569v6.666z"/></svg>
+                    LinkedIn
+                </a>
+
+                <!-- Botão GitHub -->
+                <a href="https://github.com/Liperaaon" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:bg-white/5 transition-all">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Modal WhatsApp Selector -->
+        <div id="whatsapp-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="wa-modal-title">
+            <!-- Fundo Escuro Blur -->
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeWhatsAppModal()" aria-hidden="true"></div>
+            
+            <!-- Conteúdo do Modal -->
+            <div class="glass-panel relative w-full max-w-sm p-6 rounded-2xl border border-white/10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300" id="whatsapp-modal-content">
+                <button onclick="closeWhatsAppModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors" aria-label="Fechar Modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <h3 id="wa-modal-title" class="text-xl font-bold text-white mb-2" data-i18n="wa_modal_title">Onde você está?</h3>
+                <p class="text-sm text-gray-400 mb-6" data-i18n="wa_modal_desc">Selecione sua região para o direcionamento correto.</p>
+                
+                <div class="flex flex-col gap-3">
+                    <button onclick="redirectToWhatsApp('br')" class="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl" aria-hidden="true">🇧🇷</span>
+                            <span class="font-bold text-white" data-i18n="wa_modal_br">Brasil</span>
+                        </div>
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <button onclick="redirectToWhatsApp('eu')" class="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl" aria-hidden="true">🇪🇺</span>
+                            <span class="font-bold text-white" data-i18n="wa_modal_eu">Europa / Outros</span>
+                        </div>
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botão Voltar ao Topo -->
+        <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-indigo-600 text-white shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 hover:bg-indigo-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-900 focus:ring-indigo-500" aria-label="Voltar ao topo">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+        </button>
+
+    </main>
+
+    <!-- Footer Minimalista -->
+    <footer class="border-t border-white/5 py-10 bg-base-900 text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Logo no Rodapé Atualizada com URL -->
+            <div class="flex items-center gap-2">
+                <img src="https://i.postimg.cc/HrMVYW2g/Chat-GPT-Image-19-de-abr-de-2026-22-11-20.png" alt="Logótipo Felipe" class="h-10 sm:h-12 w-auto object-contain transition-transform hover:scale-105" referrerpolicy="no-referrer">
+            </div>
+            
+            <p class="text-sm text-gray-500 font-medium">
+                &copy; <span id="current-year"></span> Felipe Augusto (Liperaon). Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interação e i18n -->
+    <script>
+        // --- INTERNATIONALIZATION (i18n) DATA ---
+        const translations = {
+            'pt': {
+                page_title: "Felipe Augusto | Desenvolvedor Full Stack",
+                nav_about: "Sobre Mim",
+                nav_services: "O que faço",
+                nav_portfolio: "Projetos",
+                nav_contact: "Contato",
+                hero_tag: "Disponível para novas oportunidades",
+                hero_title_part1: "Desenvolvedor",
+                hero_title_part2: "Full Stack.",
+                hero_subtitle: "Especialista em construir aplicações web modernas, bots de automação e sistemas robustos com foco em performance e código limpo.",
+                hero_cta_start: "Entrar em Contato",
+                hero_cta_view: "Explorar Portfólio",
+                hero_cta_cv: "Download CV",
+                about_subtitle: "Olá, eu sou Felipe (Liperaon)",
+                about_p1: "Sou estudante de Análise e Desenvolvimento de Sistemas e desenvolvedor Full Stack apaixonado por tecnologia. Construo aplicações completas (do front-end ao back-end) e automações de processos. Tenho 25 anos, sou PCD (Certificado de Discapacidad), e busco sempre escrever código sustentável e escalável.",
+                about_p2: "Além da minha base técnica (React, Node, Python), tenho experiência operacional no setor financeiro, o que me deu uma visão apurada sobre segurança de dados e resolução de problemas. Atualmente, estou em busca de novas oportunidades e desafios para integrar equipes de tecnologia.",
+                stack_title: "Tech Stack",
+                lang_title: "Idiomas",
+                lang_pt: "Português",
+                lang_es: "Espanhol",
+                lang_en: "Inglês",
+                exp_title: "Trajetória Profissional",
+                exp1_role: "Full Stack Developer",
+                exp1_date: "Nov 2024 - Presente",
+                exp1_company: "Projetos Pessoais & Freelance",
+                exp1_desc: "Desenvolvimento e manutenção de aplicações web full-stack utilizando React e Node.js. Implementação de integrações via APIs, além do desenvolvimento de bots automatizados em Python para otimização de fluxos.",
+                exp2_role: "Private Banking Operations",
+                exp2_date: "Ago 2024 - Presente",
+                exp2_company: "Meta S/A",
+                exp2_desc: "Suporte diário a operações financeiras, com foco no processamento de dados e rígida conformidade regulatória. Elaboração de relatórios técnicos e análise de informações críticas.",
+                exp3_role: "Tech Support & Atendimento",
+                exp3_date: "Mar 2023 - Presente",
+                exp3_company: "Winover Call Center",
+                exp3_desc: "Suporte técnico de primeiro nível e atendimento a clientes para resolução de problemas com produtos e sistemas. Foco em comunicação clara e resolução ágil de chamados técnicos.",
+                edu_title: "Educação & Conquistas",
+                edu1_date: "Jan 2024 - Atual",
+                edu1_course: "Análise e Desenv. de Sistemas",
+                edu1_school: "Cruzeiro do Sul (Bacharelado)",
+                edu2_course: "Web Design & Manutenção TI",
+                edu2_school: "Microlins (Formação Técnica)",
+                award_title: "100% Goal Achievement",
+                award_desc: "Reconhecimento recebido por superar métricas de qualidade e manter a consistência nas entregas.",
+                mid_cta_title: "Gostou do meu perfil?",
+                mid_cta_subtitle: "Estou sempre aberto a conversar sobre tecnologia e código.",
+                mid_cta_btn: "Entrar em Contato",
+                services_title_part2: "O que eu faço",
+                services_subtitle: "Áreas em que concentro meus estudos e aplicações práticas como desenvolvedor.",
+                service1_title: "Desenvolvimento Web",
+                service1_desc: "Criação de aplicações web modernas e responsivas utilizando React no Front-end e Node.js no Back-end.",
+                service2_title: "Scripts & Automações",
+                service2_desc: "Desenvolvimento de bots (como o Store Bot Pro) e scripts em Python para automatizar tarefas repetitivas e integrar APIs.",
+                service3_title: "Manutenção de Sistemas",
+                service3_desc: "Atuação em plataformas que demandam controle de dados, refatoração de código legado e correções de bugs.",
+                portfolio_title_part2: "Projetos em Destaque",
+                portfolio_subtitle: "Alguns dos trabalhos que desenvolvi aplicando meus conhecimentos técnicos.",
+                port1_desc: "Aplicações financeiras desenvolvidas para gestão. O foco destes projetos foi a arquitetura de banco de dados e criação de interfaces responsivas.",
+                port2_title: "Store Bot Pro",
+                port2_desc: "Script em Python que se conecta com a API do Telegram para servir como um assistente virtual, processando comandos automaticamente.",
+                port3_title: "Nexus Dashboard",
+                port3_desc: "Uma interface de usuário (UI) focada em painéis de controle, construída para apresentar dados de forma clara.",
+                contact_title_part1: "Vamos",
+                contact_title_part2: "conversar?",
+                contact_subtitle: "Aberto a novas oportunidades na área de tecnologia. Sinta-se à vontade para me mandar uma mensagem pelas plataformas abaixo.",
+                contact_email_btn: "Enviar E-mail",
+                wa_modal_title: "Onde você está?",
+                wa_modal_desc: "Selecione sua região para o direcionamento correto.",
+                wa_modal_br: "Brasil",
+                wa_modal_eu: "Europa / Outros"
+            },
+            'en': {
+                page_title: "Felipe Augusto | Full Stack Developer",
+                nav_about: "About",
+                nav_services: "What I Do",
+                nav_portfolio: "Projects",
+                nav_contact: "Contact",
+                hero_tag: "Available for new opportunities",
+                hero_title_part1: "Full Stack",
+                hero_title_part2: "Developer.",
+                hero_subtitle: "Specialized in building modern web applications, automation bots, and robust systems with a focus on performance and clean code.",
+                hero_cta_start: "Get in Touch",
+                hero_cta_view: "View Portfolio",
+                hero_cta_cv: "Download CV",
+                about_subtitle: "Hi, I'm Felipe (Liperaon)",
+                about_p1: "I'm a Systems Analysis student and a passionate Full Stack developer. I build end-to-end applications and process automations. I am 25, a PWD (Certificado de Discapacidad), and I constantly strive to write sustainable and scalable code.",
+                about_p2: "In addition to my technical foundation (React, Node, Python), I have operational experience in the financial sector, giving me a keen eye for data security and problem-solving. Currently, I am looking for new opportunities and challenges to join tech teams.",
+                stack_title: "Tech Stack",
+                lang_title: "Languages",
+                lang_pt: "Portuguese",
+                lang_es: "Spanish",
+                lang_en: "English",
+                exp_title: "Experience",
+                exp1_role: "Full Stack Developer",
+                exp1_date: "Nov 2024 - Present",
+                exp1_company: "Freelance & Personal Projects",
+                exp1_desc: "Development and maintenance of full-stack web applications using React and Node.js. Implementation of API integrations and Python automation bots to optimize workflows.",
+                exp2_role: "Private Banking Operations",
+                exp2_date: "Aug 2024 - Present",
+                exp2_company: "Meta S/A",
+                exp2_desc: "Daily support for financial operations, focusing on data processing and strict regulatory compliance. Preparation of technical reports and analysis of critical information.",
+                exp3_role: "Tech Support Representative",
+                exp3_date: "Mar 2023 - Present",
+                exp3_company: "Winover Call Center",
+                exp3_desc: "Tier-1 technical support and customer service for resolving product and system issues. Focused on clear communication and agile resolution of technical tickets.",
+                edu_title: "Education & Awards",
+                edu1_date: "Jan 2024 - Present",
+                edu1_course: "Systems Analysis and Development",
+                edu1_school: "Cruzeiro do Sul (Bachelor's)",
+                edu2_course: "Web Design & IT Maintenance",
+                edu2_school: "Microlins (Technical Degree)",
+                award_title: "100% Goal Achievement",
+                award_desc: "Recognition received for exceeding quality metrics and maintaining consistency in team deliverables.",
+                mid_cta_title: "Like my profile?",
+                mid_cta_subtitle: "I'm always open to talking about technology and code.",
+                mid_cta_btn: "Get in Touch",
+                services_title_part2: "What I Do",
+                services_subtitle: "Areas where I focus my studies and practical applications as a developer.",
+                service1_title: "Web Development",
+                service1_desc: "Creating modern and responsive web applications using React on the Front-end and Node.js on the Back-end.",
+                service2_title: "Scripts & Automations",
+                service2_desc: "Developing bots (like Store Bot Pro) and Python scripts to automate repetitive tasks and integrate APIs.",
+                service3_title: "System Maintenance",
+                service3_desc: "Working on platforms that require data control, refactoring legacy code, and bug fixing.",
+                portfolio_title_part2: "Featured Projects",
+                portfolio_subtitle: "Some of the work I've developed applying my technical knowledge.",
+                port1_desc: "Financial applications built for management. The focus of these projects was database architecture and creating responsive user interfaces.",
+                port2_title: "Store Bot Pro",
+                port2_desc: "A Python script that connects to the Telegram API to serve as a virtual assistant, processing user commands automatically.",
+                port3_title: "Nexus Dashboard",
+                port3_desc: "A user interface (UI) focused on control panels, built to present data clearly using good componentization practices.",
+                contact_title_part1: "Let's",
+                contact_title_part2: "talk?",
+                contact_subtitle: "Open to new opportunities in the tech area. Feel free to send me a message through the platforms below.",
+                contact_email_btn: "Send an Email",
+                wa_modal_title: "Where are you located?",
+                wa_modal_desc: "Select your region to reach the right number.",
+                wa_modal_br: "Brazil",
+                wa_modal_eu: "Europe / Others"
+            },
+            'es': {
+                page_title: "Felipe Augusto | Desarrollador Full Stack",
+                nav_about: "Sobre Mí",
+                nav_services: "Lo que hago",
+                nav_portfolio: "Proyectos",
+                nav_contact: "Contacto",
+                hero_tag: "Disponible para nuevas oportunidades",
+                hero_title_part1: "Desarrollador",
+                hero_title_part2: "Full Stack.",
+                hero_subtitle: "Especialista en construir aplicaciones web modernas, bots de automatización y sistemas robustos con un enfoque en rendimiento y código limpio.",
+                hero_cta_start: "Contactar",
+                hero_cta_view: "Ver Portafolio",
+                hero_cta_cv: "Descargar CV",
+                about_subtitle: "Hola, soy Felipe (Liperaon)",
+                about_p1: "Soy estudiante de Análisis y Desarrollo de Sistemas y un desarrollador Full Stack apasionado por la tecnología. Construyo aplicaciones completas y automatizaciones. Tengo 25 años, cuento con Certificado de Discapacidad, y busco siempre escribir código sostenible y escalable.",
+                about_p2: "Además de mi base técnica (React, Node, Python), tengo experiencia operativa en el sector financiero, lo que me ha dado una visión aguda sobre la seguridad de los datos y la resolución de problemas. Actualmente, busco nuevas oportunidades y desafíos en equipos tecnológicos.",
+                stack_title: "Tecnologías",
+                lang_title: "Idiomas",
+                lang_pt: "Portugués",
+                lang_es: "Español",
+                lang_en: "Inglés",
+                exp_title: "Experiencia",
+                exp1_role: "Desarrollador Full Stack",
+                exp1_date: "Nov 2024 - Presente",
+                exp1_company: "Proyectos Personales / Freelance",
+                exp1_desc: "Desarrollo y mantenimiento de aplicaciones web full-stack utilizando React y Node.js. Implementación de integraciones de API y bots de automatización en Python.",
+                exp2_role: "Operaciones de Private Banking",
+                exp2_date: "Ago 2024 - Presente",
+                exp2_company: "Meta S/A",
+                exp2_desc: "Soporte diario a operaciones financieras, enfocándose en el procesamiento de datos y cumplimiento regulatorio estricto. Elaboración de informes técnicos.",
+                exp3_role: "Soporte Técnico",
+                exp3_date: "Mar 2023 - Presente",
+                exp3_company: "Winover Call Center",
+                exp3_desc: "Soporte técnico de primer nivel y atención al cliente para resolver problemas de sistemas. Enfoque en comunicación clara y resolución ágil.",
+                edu_title: "Educación y Logros",
+                edu1_date: "Ene 2024 - Actual",
+                edu1_course: "Análisis y Desarrollo de Sistemas",
+                edu1_school: "Cruzeiro do Sul (Grado)",
+                edu2_course: "Diseño Web y Mantenimiento TI",
+                edu2_school: "Microlins (Grado Técnico)",
+                award_title: "100% Logro de Objetivos",
+                award_desc: "Reconocimiento recibido por superar métricas de calidad y mantener consistencia en las entregas del equipo.",
+                mid_cta_title: "¿Te gusta mi perfil?",
+                mid_cta_subtitle: "Siempre estoy abierto a charlar sobre tecnología y código.",
+                mid_cta_btn: "Contactar",
+                services_title_part2: "Lo que hago",
+                services_subtitle: "Áreas donde concentro mis estudios y aplicaciones prácticas como desarrollador.",
+                service1_title: "Desarrollo Web",
+                service1_desc: "Creación de aplicaciones web modernas y responsivas utilizando React en el Front-end y Node.js en el Back-end.",
+                service2_title: "Scripts y Automatizaciones",
+                service2_desc: "Desarrollo de bots (como Store Bot Pro) y scripts en Python para automatizar tareas repetitivas e integrar APIs.",
+                service3_title: "Mantenimiento de Sistemas",
+                service3_desc: "Trabajo en plataformas que requieren control de datos, refactorización de código heredado y corrección de errores.",
+                portfolio_title_part2: "Proyectos Destacados",
+                portfolio_subtitle: "Algunos de los trabajos que he desarrollado aplicando mi conocimiento técnico.",
+                port1_desc: "Aplicaciones financieras construidas para la gestión. El enfoque de estos proyectos fue la arquitectura de bases de datos y la creación de interfaces responsivas.",
+                port2_title: "Store Bot Pro",
+                port2_desc: "Un script en Python que se conecta a la API de Telegram para servir como asistente virtual, procesando comandos automáticamente.",
+                port3_title: "Nexus Dashboard",
+                port3_desc: "Una interfaz de usuario (UI) enfocada en paneles de control, construida para presentar datos de manera clara.",
+                contact_title_part1: "¿Vamos a",
+                contact_title_part2: "hablar?",
+                contact_subtitle: "Abierto a nuevas oportunidades en el área tecnológica. No dudes en enviarme un mensaje a través de las plataformas a continuación.",
+                contact_email_btn: "Enviar un Correo",
+                wa_modal_title: "¿Dónde estás ubicado?",
+                wa_modal_desc: "Selecciona tu región para el contacto correcto.",
+                wa_modal_br: "Brasil",
+                wa_modal_eu: "Europa / Otros"
+            }
+        };
+
+        // Atualiza a aparência visual dos botões de idioma
+        function updateLanguageUI(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                // Remove estilos ativos
+                btn.classList.remove('bg-white', 'text-black', 'shadow-sm', 'bg-white/10');
+                btn.classList.add('text-gray-400');
+                
+                // Adiciona estilos ativos ao botão selecionado
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.remove('text-gray-400');
+                    if(btn.parentElement.classList.contains('bg-base-800')) {
+                        btn.classList.add('bg-white/10', 'text-white', 'shadow-sm'); // Mobile
+                    } else {
+                        btn.classList.add('bg-white', 'text-black', 'shadow-sm'); // Desktop
+                    }
+                }
+            });
+        }
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            const i18nElements = document.querySelectorAll('[data-i18n]');
+            i18nElements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            if (translations[lang] && translations[lang]['page_title']) {
+                document.title = translations[lang]['page_title'];
+            }
+            localStorage.setItem('preferredLanguage', lang);
+            updateLanguageUI(lang);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-button');
+            const isHidden = menu.classList.contains('hidden');
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // --- LÓGICA DO MODAL WHATSAPP ---
+        function openWhatsAppModal(e) {
+            if (e) e.preventDefault();
+            const modal = document.getElementById('whatsapp-modal');
+            const content = document.getElementById('whatsapp-modal-content');
+            modal.classList.remove('hidden');
+            
+            // Timeout curto para que a classe de transição do Tailwind consiga animar
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeWhatsAppModal() {
+            const modal = document.getElementById('whatsapp-modal');
+            const content = document.getElementById('whatsapp-modal-content');
+            
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+            
+            // Esconde totalmente após o final da animação
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); 
+        }
+
+        function redirectToWhatsApp(region) {
+            const numbers = {
+                'br': '5511980125144',
+                'eu': '34637783740'
+            };
+            const number = numbers[region];
+            if (number) {
+                window.open(`https://wa.me/${number}`, '_blank');
+                closeWhatsAppModal();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup Data
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Language Setup with Auto-Detect
+            let finalLang = 'en'; 
+            const storedLang = localStorage.getItem('preferredLanguage');
+
+            if (storedLang && ['pt', 'en', 'es'].includes(storedLang)) {
+                finalLang = storedLang;
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (browserLang) {
+                    const shortLang = browserLang.toLowerCase().substring(0, 2);
+                    if (['pt', 'en', 'es'].includes(shortLang)) {
+                        finalLang = shortLang;
+                    }
+                }
+            }
+            
+            setLanguage(finalLang);
+
+            // Mobile Menu
+            const btn = document.getElementById('mobile-menu-button');
+            btn.addEventListener('click', toggleMobileMenu);
+
+            // --- Scroll Animations ---
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                revealObserver.observe(el);
+            });
+
+            // --- ScrollSpy (Destaque do Menu) & Back to Top ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollY = window.pageYOffset;
+
+                // Back to Top Button Logic
+                if (scrollY > 500) {
+                    backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+                    backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+                } else {
+                    backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+                    backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                }
+
+                // ScrollSpy Logic
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-section');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active-section');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
