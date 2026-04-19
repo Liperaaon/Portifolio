@@ -1,1 +1,56 @@
-💻 Portfólio Pessoal | Felipe Augusto (Liperaon)Bem-vindo(a) ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minhas habilidades como Desenvolvedor Full Stack, meus projetos em destaque e minha trajetória profissional.🌐 Acesse o site online: liperaon.com🚀 Visão Geral do ProjetoEste portfólio foi construído do zero, sem a utilização de frameworks pesados, focando em performance, acessibilidade e design moderno. O objetivo é demonstrar não apenas meus projetos (React, Node.js, Python), mas também meu domínio prático em Front-end, UI/UX e manipulação direta do DOM via JavaScript.✨ Principais Funcionalidades (Highlights)Internacionalização (i18n) Nativa: Sistema de troca de idiomas (Português, Inglês e Espanhol) desenvolvido em Vanilla JavaScript, operando no client-side sem necessidade de recarregamento da página.UI/UX Premium: Design moderno utilizando os conceitos de Bento Grid e Glassmorphism, com animações fluidas baseadas em intersecção de tela (IntersectionObserver).Totalmente Responsivo: Abordagem Mobile First garantindo que a experiência seja perfeita em desktops, tablets e smartphones.Roteamento Inteligente de Contato: Modal customizado que identifica a região do usuário (Brasil ou Europa/Outros) para direcionamento correto de DDI no WhatsApp.Otimização de Performance e SEO: Sem dependências externas pesadas; Tailwind CSS injetado via CDN com configuração customizada em tempo real para otimizar o carregamento.🛠️ Tecnologias UtilizadasA stack escolhida para o portfólio em si foca na leveza e no controle total da interface:HTML5 Semântico: Estruturação de dados visando acessibilidade e SEO.Tailwind CSS (via script configuration): Estilização utilitária com paleta de cores customizada, animações próprias (keyframes) e suporte a Dark Mode.Vanilla JavaScript (ES6+): Lógica de animações de scroll, gerenciamento de estado do menu mobile, sistema i18n e manipulação de modais.Google Fonts: Utilização da tipografia 'Plus Jakarta Sans'.(Nota: Este repositório foca na interface do portfólio. Meus conhecimentos em React.js, Node.js, Python e Banco de Dados podem ser conferidos nos repositórios específicos linkados na seção de Projetos do site).👨‍💻 Sobre o AutorFelipe Augusto (Liperaon)Desenvolvedor Full Stack | Análise e Desenvolvimento de SistemasSou um desenvolvedor apaixonado por tecnologia, focado em construir aplicações web modernas, bots de automação e sistemas escaláveis. Tenho 25 anos, possuo certificado de PCD (Discapacidad), e busco sempre escrever um código limpo e sustentável.Além da minha base técnica de desenvolvimento, trago uma forte bagagem operacional do setor financeiro (Private Banking) e suporte técnico, o que me conferiu uma visão extremamente analítica sobre segurança de dados, conformidade regulatória e resolução ágil de problemas complexos.📬 ContatosSinta-se à vontade para entrar em contato para oportunidades, parcerias ou apenas para falar sobre código!LinkedIn: linkedin.com/in/liperaonEmail: felipe_mx@hotmail.comGitHub: @LiperaaonFeito com dedicação por Felipe Augusto.
+💻 Portfólio Pessoal | Felipe Augusto (Liperaon)
+
+Bem-vindo(a) ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minhas habilidades como Desenvolvedor Full Stack, meus projetos em destaque e minha trajetória profissional.
+
+🌐 Acesse o site online: liperaon.com
+
+🚀 Visão Geral do Projeto
+
+Este portfólio foi construído do zero, sem a utilização de frameworks pesados, focando em performance, acessibilidade e design moderno. O objetivo é demonstrar não apenas meus projetos (React, Node.js, Python), mas também meu domínio prático em Front-end, UI/UX e manipulação direta do DOM via JavaScript.
+
+✨ Principais Funcionalidades (Highlights)
+
+Internacionalização (i18n) Nativa: Sistema de troca de idiomas (Português, Inglês e Espanhol) desenvolvido em Vanilla JavaScript, operando no client-side sem necessidade de recarregamento da página.
+
+UI/UX Premium: Design moderno utilizando os conceitos de Bento Grid e Glassmorphism, com animações fluidas baseadas em intersecção de tela (IntersectionObserver).
+
+Totalmente Responsivo: Abordagem Mobile First garantindo que a experiência seja perfeita em desktops, tablets e smartphones.
+
+Roteamento Inteligente de Contato: Modal customizado que identifica a região do usuário (Brasil ou Europa/Outros) para direcionamento correto de DDI no WhatsApp.
+
+Otimização de Performance e SEO: Sem dependências externas pesadas; Tailwind CSS injetado via CDN com configuração customizada em tempo real para otimizar o carregamento.
+
+🛠️ Tecnologias Utilizadas
+
+A stack escolhida para o portfólio em si foca na leveza e no controle total da interface:
+
+HTML5 Semântico: Estruturação de dados visando acessibilidade e SEO.
+
+Tailwind CSS (via script configuration): Estilização utilitária com paleta de cores customizada, animações próprias (keyframes) e suporte a Dark Mode.
+
+Vanilla JavaScript (ES6+): Lógica de animações de scroll, gerenciamento de estado do menu mobile, sistema i18n e manipulação de modais.
+
+Google Fonts: Utilização da tipografia 'Plus Jakarta Sans'.
+
+(Nota: Este repositório foca na interface do portfólio. Meus conhecimentos em React.js, Node.js, Python e Banco de Dados podem ser conferidos nos repositórios específicos linkados na seção de Projetos do site).
+
+👨‍💻 Sobre o Autor
+
+Felipe Augusto (Liperaon)
+Desenvolvedor Full Stack | Análise e Desenvolvimento de Sistemas
+
+Sou um desenvolvedor apaixonado por tecnologia, focado em construir aplicações web modernas, bots de automação e sistemas escaláveis. Tenho 25 anos, possuo certificado de PCD (Discapacidad), e busco sempre escrever um código limpo e sustentável.
+
+Além da minha base técnica de desenvolvimento, trago uma forte bagagem operacional do setor financeiro (Private Banking) e suporte técnico, o que me conferiu uma visão extremamente analítica sobre segurança de dados, conformidade regulatória e resolução ágil de problemas complexos.
+
+📬 Contatos
+
+Sinta-se à vontade para entrar em contato para oportunidades, parcerias ou apenas para falar sobre código!
+
+LinkedIn: linkedin.com/in/liperaon
+
+Email: felipe_mx@hotmail.com
+
+GitHub: @Liperaaon
+
+Feito com dedicação por Felipe Augusto.
