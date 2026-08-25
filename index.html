@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Felipe Augusto (Liperaon): desenvolvimento Full Stack, produtos SaaS, APIs, automação e engenharia de software.">
+  <meta name="keywords" content="Felipe Augusto, Liperaon, Full Stack Developer, TypeScript, React, Next.js, Node.js, NestJS, Python, SaaS, automação">
+  <meta name="author" content="Felipe Augusto">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Felipe Augusto — Full Stack Developer">
+  <meta property="og:description" content="Produtos digitais, APIs e automações construídos de ponta a ponta.">
+  <meta property="og:image" content="https://i.postimg.cc/hJ2CnG9D/exec-b06f09bf-18c3-47a7-a350-e516b656b775.png">
+  <title>Felipe Augusto — Full Stack Developer</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="https://i.postimg.cc/bZHC6grM/exec-72c0bfb2-a64e-48cf-86dd-dd004f9ba4fb.png">
+  <link rel="apple-touch-icon" href="https://i.postimg.cc/bZHC6grM/exec-72c0bfb2-a64e-48cf-86dd-dd004f9ba4fb.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper:#f3f0e8; --surface:#fffdf7; --ink:#101b2d; --muted:#5d6673;
+      --line:#ccd0ce; --blue:#1649ff; --blue-ink:#0d36c7; --orange:#ff5c35;
+      --lime:#dff36b; --nav:rgba(243,240,232,.88); --shadow:0 20px 55px rgba(16,27,45,.1);
+      --display:"Arial Narrow","Avenir Next Condensed","Roboto Condensed",Impact,sans-serif;
+      --body:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+      --radius:20px; --max:1200px;
+    }
+    [data-theme="dark"] {
+      color-scheme:dark; --paper:#0a1220; --surface:#111c2d; --ink:#f4f3ec; --muted:#a7b0bd;
+      --line:#2c3b4f; --blue:#7c9cff; --blue-ink:#a9bbff; --orange:#ff7655;
+      --lime:#cfe95f; --nav:rgba(10,18,32,.88); --shadow:0 24px 60px rgba(0,0,0,.28);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);transition:background .25s,color .25s;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 70%);z-index:-2}
+    img{display:block;max-width:100%} a{color:inherit} button{font:inherit;color:inherit}
+    :focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:4px}
+    ::selection{background:var(--lime);color:#101b2d}
+    .skip{position:fixed;left:16px;top:-80px;z-index:999;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:10px}.skip:focus{top:16px}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+    .nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:var(--nav);backdrop-filter:blur(18px)}
+    .nav-inner{min-height:76px;display:flex;align-items:center;gap:24px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:800 1rem/1 var(--mono);letter-spacing:-.04em;margin-right:auto}
+    .brand-mark{display:grid;place-items:center;width:38px;height:38px;flex:0 0 38px}
+    .brand-mark img{width:145%;height:145%;max-width:none;object-fit:contain}
+    .links{display:flex;align-items:center;gap:4px}.links a{text-decoration:none;color:var(--muted);font-size:.84rem;font-weight:700;padding:10px 12px;border-radius:99px}.links a:hover,.links a[aria-current="true"]{color:var(--ink);background:color-mix(in srgb,var(--ink) 7%,transparent)}
+    .nav-actions{display:flex;align-items:center;gap:8px}.language-select{height:42px;min-width:90px;padding:0 28px 0 12px;border:1px solid var(--line);border-radius:99px;background:var(--surface);color:var(--ink);font:700 .72rem/1 var(--mono);cursor:pointer}.icon-btn{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);background:var(--surface);border-radius:50%;cursor:pointer}.icon-btn:hover{transform:translateY(-2px)}
+    .menu-btn{display:none}.mobile-menu{display:none}
+    .hero{min-height:calc(100svh - 76px);display:grid;grid-template-columns:minmax(0,1.45fr) minmax(310px,.55fr);align-items:center;gap:70px;padding-block:72px}
+    .eyebrow{display:flex;align-items:center;gap:12px;font:700 .74rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink)}
+    .eyebrow::before{content:"";width:36px;height:2px;background:currentColor}
+    .status-dot{width:8px;height:8px;border-radius:50%;background:#2cb67d;box-shadow:0 0 0 5px color-mix(in srgb,#2cb67d 18%,transparent);animation:pulse 2.2s ease-out infinite}
+    h1,h2,h3,p{margin-top:0}.hero h1{font:900 clamp(4.2rem,10.5vw,9.2rem)/.78 var(--display);letter-spacing:-.075em;text-transform:uppercase;margin:30px 0 34px;max-width:900px}
+    .hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--ink)}.hero h1 em{font-style:normal;color:var(--blue);-webkit-text-stroke:0}
+    .hero-copy{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;max-width:680px}.hero-copy .route{font:700 .72rem/1.5 var(--mono);color:var(--muted)}.hero-copy p{font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.55;margin-bottom:28px}.hero-meta{margin:18px 0 0;color:var(--muted);font:700 .68rem/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border:1px solid var(--ink);border-radius:99px;text-decoration:none;font-weight:800;font-size:.9rem;cursor:pointer;background:transparent}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(16,27,45,.12)}.btn-primary{background:var(--ink);color:var(--paper)}.btn-blue{background:var(--blue);border-color:var(--blue);color:white}
+    .portrait-wrap{position:relative}.portrait{aspect-ratio:4/5;overflow:hidden;border-radius:180px 180px 24px 24px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}.portrait img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.03)}
+    .portrait-wrap::before{content:"GRU  ↗  TECH";position:absolute;top:12%;left:-54px;z-index:2;background:var(--lime);color:#101b2d;padding:10px 16px;font:800 .72rem/1 var(--mono);transform:rotate(-7deg)}
+    .coordinates{display:flex;justify-content:space-between;margin-top:14px;color:var(--muted);font:600 .68rem/1 var(--mono);text-transform:uppercase}
+    .scroll-cue{position:absolute;bottom:28px;left:50%;font:700 .65rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl}
+    section{padding-block:110px}.section-top{display:grid;grid-template-columns:130px minmax(0,1fr);gap:24px;margin-bottom:56px}.section-top>*{min-width:0}.index{font:700 .75rem/1 var(--mono);color:var(--blue-ink)}
+    .section-top h2{font:900 clamp(3.2rem,7vw,6.4rem)/.88 var(--display);letter-spacing:-.055em;text-transform:uppercase;max-width:860px;margin-bottom:18px}.section-top p{max-width:650px;color:var(--muted);font-size:1.08rem}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+    .panel{background:var(--surface);padding:clamp(28px,4vw,52px)}.panel h3{font:800 clamp(1.6rem,3vw,2.5rem)/1.08 var(--display);letter-spacing:-.035em;margin-bottom:22px}.panel p{color:var(--muted)}
+    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}.fact{background:var(--paper);padding:24px}.fact strong{display:block;font:900 1.7rem/1 var(--display);color:var(--blue);margin-bottom:8px}.fact span{font:700 .72rem/1.4 var(--mono);text-transform:uppercase;color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}.chip{padding:8px 11px;border:1px solid var(--line);border-radius:8px;font:700 .72rem/1 var(--mono);background:var(--paper)}
+    .languages{margin-top:30px;border-top:1px solid var(--line)}.language{display:grid;grid-template-columns:1fr auto;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}.language span:last-child{font:700 .72rem/1 var(--mono);color:var(--blue-ink)}
+    .services-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.service{grid-column:span 4;min-height:280px;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);position:relative;overflow:hidden}.service:nth-child(4){grid-column:span 12;min-height:220px;background:var(--ink);color:var(--paper);display:grid;grid-template-columns:1fr 2fr;gap:30px}.service-no{font:800 .72rem/1 var(--mono);color:var(--orange)}.service h3{font:900 2rem/1 var(--display);text-transform:uppercase;letter-spacing:-.04em;margin:70px 0 14px}.service p{color:var(--muted);margin:0}.service:nth-child(4) p{color:color-mix(in srgb,var(--paper) 70%,transparent);align-self:end}.service:nth-child(4) h3{margin:20px 0}.service:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--blue)}
+    .projects{display:grid;gap:18px}.project{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:34px;padding:30px;border-top:1px solid var(--line);text-decoration:none}.project:last-child{border-bottom:1px solid var(--line)}.project .num{font:900 3rem/1 var(--display);color:var(--line)}.project h3{font:900 clamp(2rem,4vw,4rem)/1 var(--display);letter-spacing:-.04em;margin-bottom:10px}.project p{max-width:690px;color:var(--muted);margin-bottom:16px}.project .arrow{display:grid;place-items:center;width:60px;height:60px;border:1px solid var(--line);border-radius:50%;font-size:1.6rem}.project:hover{background:var(--surface)}.project:hover .arrow{background:var(--blue);color:white;border-color:var(--blue);transform:rotate(-20deg)}
+    .project-featured{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:50px;padding:clamp(30px,5vw,64px);margin-bottom:34px;border-radius:var(--radius);background:var(--ink);color:var(--paper);overflow:hidden}.project-featured::after{content:"01";position:absolute;right:-10px;bottom:-55px;font:900 15rem/1 var(--display);color:color-mix(in srgb,var(--paper) 5%,transparent);pointer-events:none}.featured-label{display:inline-flex;align-items:center;gap:10px;font:800 .7rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}.featured-label::before{content:"";width:28px;height:2px;background:currentColor}.project-featured h3{font:900 clamp(3.4rem,8vw,7rem)/.82 var(--display);letter-spacing:-.06em;text-transform:uppercase;margin:36px 0 26px}.project-featured p{position:relative;z-index:1;color:color-mix(in srgb,var(--paper) 72%,transparent);font-size:1.08rem;max-width:700px}.project-featured .stack{position:relative;z-index:1}.project-featured .chip{background:transparent;border-color:color-mix(in srgb,var(--paper) 20%,transparent);color:var(--paper)}.featured-side{position:relative;z-index:1;align-self:end;border-top:1px solid color-mix(in srgb,var(--paper) 25%,transparent)}.feature-line{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid color-mix(in srgb,var(--paper) 25%,transparent);font:700 .72rem/1.35 var(--mono)}.feature-line span:last-child{color:var(--lime);text-align:right}.private-note{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font:700 .7rem/1 var(--mono);color:color-mix(in srgb,var(--paper) 65%,transparent)}.private-note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+    .timeline{position:relative;margin-left:130px}.timeline::before{content:"";position:absolute;left:10px;top:10px;bottom:10px;width:1px;background:var(--line)}.role{position:relative;display:grid;grid-template-columns:170px 1fr;gap:38px;padding:0 0 52px 48px}.role::before{content:"";position:absolute;left:4px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--blue)}.role time{font:700 .75rem/1.4 var(--mono);color:var(--blue-ink)}.role h3{font:900 clamp(1.5rem,3vw,2.25rem)/1 var(--display);letter-spacing:-.035em;margin-bottom:8px}.role .company{font-weight:800;margin-bottom:12px}.role p{color:var(--muted);max-width:700px}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.edu,.award{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}.edu time{font:700 .72rem/1 var(--mono);color:var(--blue-ink)}.edu h3{font:900 1.6rem/1.05 var(--display);letter-spacing:-.03em;margin:28px 0 10px}.edu p{margin:0;color:var(--muted)}.award{grid-column:span 2;background:var(--lime);color:#101b2d;display:flex;justify-content:space-between;gap:28px;align-items:center}.award strong{font:900 clamp(2rem,4vw,4rem)/.9 var(--display);text-transform:uppercase}.award p{max-width:480px;margin:0}
+    .aviation{position:relative;background:var(--blue);color:white;overflow:hidden}.aviation::after{content:"";position:absolute;width:650px;height:650px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:-180px;top:-260px;box-shadow:0 0 0 80px rgba(255,255,255,.05),0 0 0 160px rgba(255,255,255,.04)}.aviation .section-top{position:relative;z-index:1}.aviation .index,.aviation .section-top p{color:rgba(255,255,255,.75)}.aviation-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:70px}.aviation-copy{font-size:clamp(1.25rem,2.2vw,1.8rem);line-height:1.45}.aviation-copy strong{color:var(--lime)}.aviation-list{border-top:1px solid rgba(255,255,255,.3)}.aviation-item{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.3);font:700 .78rem/1.3 var(--mono)}
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.cert{display:grid;grid-template-columns:72px 1fr;gap:22px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.cert-date{font:800 .69rem/1.3 var(--mono);color:var(--blue-ink)}.cert h3{font:800 1.2rem/1.18 var(--display);margin:0 0 6px}.cert p{font-size:.82rem;color:var(--muted);margin:0}
+    .contact{padding-bottom:50px}.contact-box{background:var(--ink);color:var(--paper);border-radius:30px;padding:clamp(32px,7vw,84px);position:relative;overflow:hidden}.contact-box::after{content:"@";position:absolute;right:-1vw;bottom:-8vw;font:900 28vw/.7 var(--display);color:color-mix(in srgb,var(--paper) 5%,transparent);pointer-events:none}.contact-box h2{position:relative;z-index:1;font:900 clamp(4rem,10vw,9rem)/.8 var(--display);letter-spacing:-.07em;text-transform:uppercase;max-width:900px;margin-bottom:34px}.contact-box h2 em{font-style:normal;color:var(--orange)}.contact-box p{position:relative;z-index:1;max-width:590px;color:color-mix(in srgb,var(--paper) 68%,transparent);font-size:1.1rem}.contact-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.contact-actions .btn{border-color:color-mix(in srgb,var(--paper) 45%,transparent)}.contact-actions .btn-primary{background:var(--paper);color:var(--ink)}
+    footer{display:flex;justify-content:space-between;gap:20px;padding-block:28px;font:700 .68rem/1.4 var(--mono);color:var(--muted);text-transform:uppercase}
+    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}[data-reveal].visible{opacity:1;transform:none}
+    .service,.project,.cert,.btn,.icon-btn,.project .arrow{transition:transform .25s ease,background .25s,color .25s,border-color .25s,box-shadow .25s}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(44,182,125,.45)}70%{box-shadow:0 0 0 10px rgba(44,182,125,0)}100%{box-shadow:0 0 0 0 rgba(44,182,125,0)}}
+    @media(max-width:920px){.links{display:none}.menu-btn{display:grid}.mobile-menu.open{display:grid;gap:8px;padding:0 20px 20px}.mobile-menu a{padding:12px 0;text-decoration:none;font-weight:800}.hero{grid-template-columns:1fr;min-height:auto}.portrait-wrap{width:min(100%,470px);margin-inline:auto}.scroll-cue{display:none}.about-grid,.aviation-grid,.project-featured{grid-template-columns:1fr}.service{grid-column:span 6}.timeline{margin-left:0}.cert-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.wrap{width:min(calc(100% - 28px),var(--max))}.hero{padding-block:52px;gap:46px}.hero h1{font-size:clamp(3.6rem,20vw,6rem)}.hero-copy{grid-template-columns:1fr}.route{display:none}section{padding-block:78px}.section-top{grid-template-columns:minmax(0,1fr);gap:14px}.section-top h2{font-size:clamp(3rem,17vw,5rem);overflow-wrap:anywhere}.about-grid{border-radius:16px}.facts{grid-template-columns:1fr}.service,.service:nth-child(4){grid-column:span 12;grid-template-columns:1fr;min-height:auto}.service h3{margin-top:42px}.project{grid-template-columns:46px minmax(0,1fr);padding:24px 4px;gap:12px}.project .num{font-size:1.7rem}.project .arrow{display:none}.timeline::before{left:6px}.role{grid-template-columns:1fr;padding-left:32px}.role::before{left:0}.edu-grid{grid-template-columns:1fr}.award{grid-column:span 1;display:block}.award p{margin-top:18px}.cert{grid-template-columns:minmax(0,1fr) auto}.cert-date{grid-column:1/-1}.contact-box{border-radius:20px}.contact-box h2{font-size:clamp(3.5rem,18vw,6rem)}footer{display:block}footer span{display:block;margin-top:8px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}[data-reveal]{opacity:1;transform:none}}
+
+    /* Minimal refinement layer */
+    :root{
+      --paper:#f7f7f5;--surface:#ffffff;--ink:#17191f;--muted:#646a73;
+      --line:#e2e4e7;--blue:#2563eb;--blue-ink:#1d4ed8;--orange:#e85d3f;
+      --lime:#dced72;--nav:rgba(247,247,245,.9);--shadow:0 12px 35px rgba(23,25,31,.07);
+      --display:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --radius:14px;--max:1100px
+    }
+    [data-theme="dark"]{
+      --paper:#0f1115;--surface:#171a20;--ink:#f2f3f5;--muted:#a2a7b0;
+      --line:#292d35;--blue:#6f98ff;--blue-ink:#8cabff;--orange:#ff8067;
+      --nav:rgba(15,17,21,.9);--shadow:0 16px 40px rgba(0,0,0,.24)
+    }
+    body{font-size:15.5px;line-height:1.7}
+    body::before{opacity:.1;background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 50%)}
+    .wrap{width:min(calc(100% - 48px),var(--max))}
+    .nav-inner{min-height:64px;gap:16px}.brand{font-family:var(--body);font-size:.9rem;letter-spacing:-.015em}.brand-mark{width:34px;height:34px;flex-basis:34px}.links a{font-size:.78rem;font-weight:600;padding:8px 10px}.language-select{height:38px;min-width:86px}.icon-btn{width:38px;height:38px}
+    .hero{min-height:690px;grid-template-columns:minmax(0,1.2fr) minmax(270px,.48fr);gap:64px;padding-block:64px}
+    .eyebrow{font-size:.68rem;letter-spacing:.09em}.eyebrow::before{width:24px}
+    .hero h1{font:700 clamp(3.4rem,6vw,5.5rem)/.94 var(--display);letter-spacing:-.06em;text-transform:none;margin:24px 0 28px;max-width:700px}
+    .hero h1 span{display:block;color:var(--ink);-webkit-text-stroke:0}.hero h1 em{display:block;font-weight:600}
+    .hero-copy{grid-template-columns:80px minmax(0,1fr);gap:24px;max-width:640px}.hero-copy .route{font-size:.62rem}.hero-copy p{font-size:1.05rem;line-height:1.65;margin-bottom:24px;max-width:560px}
+    .btn{min-height:44px;padding:10px 17px;font-size:.82rem;font-weight:700}.btn:hover{transform:translateY(-2px);box-shadow:0 7px 16px rgba(23,25,31,.09)}
+    .portrait-wrap{max-width:330px;justify-self:end}.portrait{border-radius:24px;box-shadow:none}.portrait-wrap::before{top:18px;left:-20px;padding:8px 11px;font-size:.6rem;transform:none;border-radius:6px}.scroll-cue{display:none}
+    section{padding-block:82px}.section-top{grid-template-columns:100px minmax(0,1fr);gap:20px;margin-bottom:38px}.index{font-size:.66rem}
+    .section-top h2{font:700 clamp(2.15rem,3.8vw,3.5rem)/1.05 var(--display);letter-spacing:-.045em;text-transform:none;max-width:720px;margin-bottom:14px}.section-top p{font-size:1rem;max-width:610px}
+    .panel{padding:clamp(26px,3.5vw,40px)}.panel h3{font:650 clamp(1.4rem,2.3vw,1.9rem)/1.2 var(--display);letter-spacing:-.03em;margin-bottom:18px}.panel p{margin-bottom:14px}
+    .fact{padding:20px}.fact strong{font:700 1.35rem/1 var(--display)}.fact span{font-size:.62rem}.stack{gap:7px;margin-top:20px}.chip{padding:7px 9px;border-radius:7px;font-size:.65rem;font-weight:600}.languages{margin-top:24px}.language{padding:13px 0}
+    .services-grid{gap:12px}.service{min-height:215px;padding:25px;border-radius:12px}.service:nth-child(4){min-height:170px;background:var(--surface);color:var(--ink);border-color:var(--line)}.service-no{font-size:.64rem;color:var(--blue-ink)}.service h3{font:650 1.35rem/1.2 var(--display);text-transform:none;letter-spacing:-.025em;margin:45px 0 10px}.service:nth-child(4) h3{margin:14px 0}.service:nth-child(4) p{color:var(--muted)}.service:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .projects{gap:8px}.project{grid-template-columns:48px minmax(0,1fr) auto;gap:22px;padding:24px 16px}.project .num{font:600 .75rem/1 var(--mono);color:var(--muted)}.project h3{font:650 clamp(1.35rem,2.5vw,1.9rem)/1.15 var(--display);letter-spacing:-.03em;margin-bottom:8px}.project p{margin-bottom:12px}.project .arrow{width:42px;height:42px;font-size:1.05rem}.project-static:hover{background:transparent}.project-status{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:6px 10px;border:1px solid var(--line);border-radius:99px;color:var(--blue-ink);font:700 .62rem/1 var(--mono);text-transform:uppercase;white-space:nowrap}
+    .project-featured{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);gap:40px;padding:clamp(28px,4vw,44px);margin-bottom:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}.project-featured::after{display:none}.featured-label{font-size:.63rem;color:var(--blue-ink)}.featured-label::before{width:20px}.project-featured h3{font:700 clamp(2.35rem,4vw,3.5rem)/1 var(--display);letter-spacing:-.05em;text-transform:none;margin:24px 0 18px}.project-featured p{color:var(--muted);font-size:.95rem;line-height:1.65}.project-featured .chip{background:var(--paper);border-color:var(--line);color:var(--ink)}.featured-side{border-top-color:var(--line)}.feature-line{padding:13px 0;border-bottom-color:var(--line);font-size:.64rem}.feature-line span:last-child{color:var(--blue-ink)}.private-note{margin-top:20px;color:var(--muted);font-size:.64rem}
+    .timeline{margin-left:100px}.role{grid-template-columns:150px minmax(0,1fr);gap:28px;padding:0 0 38px 40px}.role h3{font:650 clamp(1.25rem,2.1vw,1.65rem)/1.2 var(--display);letter-spacing:-.025em}.role p{margin-bottom:0}.role time{font-size:.68rem}
+    .edu-grid{gap:12px}.edu,.award{padding:25px;border-radius:12px}.edu h3{font:650 1.3rem/1.2 var(--display);margin:22px 0 8px}.award strong{font:700 clamp(1.7rem,3vw,2.6rem)/1 var(--display);text-transform:none}
+    .aviation{background:#111827;color:#f8fafc}.aviation::after{display:none}.aviation-grid{gap:52px}.aviation .index,.aviation .section-top h2{color:#f8fafc}.aviation .section-top p{color:#cbd5e1}.aviation-copy{color:#e5e7eb;font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.6}.aviation-copy strong{color:#93c5fd}.aviation-list{border-top-color:rgba(248,250,252,.24)}.aviation-item{padding:14px 0;border-bottom-color:rgba(248,250,252,.24);color:#f8fafc;font-size:.68rem}
+    .cert-grid{gap:10px}.cert{grid-template-columns:64px minmax(0,1fr) auto;gap:18px;padding:20px;border-radius:12px}.cert h3{font:650 1.05rem/1.3 var(--display)}.cert-arrow{font-size:1rem}
+    .contact{padding-bottom:36px}.contact-box{border-radius:18px;padding:clamp(30px,5vw,54px)}.contact-box::after{font-size:19vw}.contact-box h2{font:700 clamp(2.7rem,6vw,5.2rem)/.98 var(--display);letter-spacing:-.06em;text-transform:none;max-width:760px;margin-bottom:24px}.contact-box p{font-size:1rem}.contact-actions{margin-top:26px}
+    footer{padding-block:22px;font-size:.62rem}
+    [data-reveal]{transform:translateY(14px);transition-duration:.55s}
+    @media(max-width:920px){.hero{grid-template-columns:minmax(0,1fr);min-height:auto;gap:48px}.portrait-wrap{justify-self:center}.project-featured{grid-template-columns:minmax(0,1fr)}.timeline{margin-left:0}}
+@media(max-width:650px){
+  .nav-inner{gap:8px}
+  .brand>span:last-child{display:none}
+  .nav-actions{gap:6px}
+      .wrap{width:min(calc(100% - 32px),var(--max))}.hero{padding-block:46px;gap:36px}.hero h1{font-size:clamp(2.7rem,12vw,3.6rem);line-height:.98;margin:20px 0 22px}.hero-copy{grid-template-columns:minmax(0,1fr)}.hero-copy p{font-size:.98rem}.portrait-wrap{max-width:290px;justify-self:center}.portrait-wrap::before{left:-8px}
+      section{padding-block:62px}.section-top{grid-template-columns:minmax(0,1fr);gap:10px;margin-bottom:28px}.section-top h2{font-size:clamp(1.9rem,8vw,2.45rem);line-height:1.08;overflow-wrap:normal}.section-top p{font-size:.95rem}
+      .panel{padding:24px}.facts{grid-template-columns:repeat(2,1fr)}.service h3{margin-top:34px}.project-featured{padding:24px;gap:28px}.project-featured h3{font-size:2.35rem;margin:20px 0 16px}.project{grid-template-columns:32px minmax(0,1fr);padding:20px 4px;gap:10px}.project h3{font-size:1.3rem}
+      .role{padding-left:28px;padding-bottom:32px}.role h3{font-size:1.25rem}.edu,.award{padding:22px}.award strong{font-size:1.7rem}.contact-box h2{font-size:clamp(2.45rem,12vw,3.6rem);line-height:1}.cert{padding:18px}
+    }
+
+    /* Clear information architecture */
+    body::before{display:none}
+    .hero-copy{grid-template-columns:minmax(0,1fr);max-width:590px}
+    .hero-copy .route,.scroll-cue,.coordinates,.service-no,.project .num{display:none}
+    .portrait-wrap::before{display:none}
+    .section-top{grid-template-columns:110px minmax(0,1fr)}
+    .index{font-family:var(--body);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .service{min-height:175px;display:flex;flex-direction:column;justify-content:center}
+    .service h3,.service:nth-child(4) h3{margin:0 0 10px}
+    .service:nth-child(4){grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);align-items:center}
+    .project{grid-template-columns:minmax(0,1fr) auto;padding-inline:8px}
+    .ordenou-preview{display:block;margin-bottom:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper);text-decoration:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+    .ordenou-preview img{width:100%;height:150px;object-fit:contain;padding:20px;background:#f7f7f5}
+    .ordenou-preview span{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;border-top:1px solid var(--line);font-size:.78rem;font-weight:700;color:var(--ink)}
+    .ordenou-preview:hover{transform:translateY(-2px);border-color:var(--blue);box-shadow:var(--shadow)}
+    .contact-box h2{max-width:650px}
+    @media(max-width:650px){
+      .section-top{grid-template-columns:minmax(0,1fr)}
+      .service:nth-child(4){grid-template-columns:minmax(0,1fr)}
+      .project{grid-template-columns:minmax(0,1fr)}.project-status{justify-self:start}
+    }
+
+    /* UX system layer */
+    html{scroll-padding-top:78px}
+    h1,h2{text-wrap:balance}.section-top p,.hero-copy p{max-width:62ch}
+    .nav{box-shadow:0 1px 0 color-mix(in srgb,var(--line) 65%,transparent)}
+    .language-select,.icon-btn{min-height:44px}.icon-btn{width:44px;height:44px}.links a{display:flex;align-items:center;min-height:40px}
+    .btn{min-height:46px;transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .2s ease}.btn:hover{transform:none}.btn:active{opacity:.78}.btn-primary:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+    .service:hover{transform:none;box-shadow:none;border-color:var(--line)}
+    .project{border-radius:10px}.project:hover{background:var(--surface)}.project-static{cursor:default}.project-static:hover{background:transparent}.project:focus-visible,.ordenou-preview:focus-visible{outline-offset:5px}
+    .career-more{background:var(--surface);border-block:1px solid var(--line)}
+    .career-summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:112px;padding-block:24px;cursor:pointer;list-style:none;user-select:none}
+    .career-summary::-webkit-details-marker{display:none}.career-summary::marker{content:""}
+    .summary-copy{display:grid;gap:5px}.summary-kicker{color:var(--blue-ink);font:700 .65rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase}.summary-title{font:650 clamp(1.25rem,2.4vw,1.8rem)/1.2 var(--display);letter-spacing:-.025em}
+    .summary-icon{display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;border:1px solid var(--line);border-radius:50%;font-size:1.35rem;transition:transform .22s ease,background-color .22s ease,color .22s ease}
+    .career-summary:hover .summary-icon{background:var(--blue);border-color:var(--blue);color:#fff}.career-more[open] .summary-icon{transform:rotate(45deg)}.career-more[open] .career-summary{border-bottom:1px solid var(--line)}
+    .career-more[open]>section{animation:details-in .28s ease both}.formation-section{padding-block:72px}
+    @keyframes details-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+    .contact-actions .btn{min-height:48px}.contact-actions button{cursor:pointer}
+    @media(max-width:920px){
+      .mobile-menu.open{display:grid;gap:2px;padding:8px 24px 16px;border-top:1px solid var(--line);background:var(--nav)}
+      .mobile-menu a{display:flex;align-items:center;min-height:46px;padding:8px 4px;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent);color:var(--muted)}
+      .mobile-menu a:last-child{border-bottom:0}.mobile-menu a[aria-current="true"]{color:var(--ink)}
+    }
+    @media(max-width:650px){
+      .hero{padding-top:40px}.hero .actions,.contact-actions{display:grid;grid-template-columns:minmax(0,1fr)}.hero .btn,.contact-actions .btn{width:100%}
+      .career-summary{min-height:94px;gap:16px}.summary-title{font-size:1.18rem}.summary-icon{width:40px;height:40px;flex-basis:40px}.formation-section{padding-block:58px}
+      .project{border-radius:0}.project p{font-size:.93rem;line-height:1.6}.project .stack{margin-top:14px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="nav" id="nav">
+    <div class="nav-inner wrap">
+      <a class="brand" href="#inicio" aria-label="Felipe Augusto — início"><span class="brand-mark" aria-hidden="true"><img src="https://i.postimg.cc/cKxDP3th/exec-82997ad4-021c-46bd-8712-15d1ed2e639b.png" alt="" width="38" height="38"></span><span>Felipe / Liperaon</span></a>
+      <nav class="links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a><a href="#atuacao">Competências</a><a href="#projetos">Projetos</a><a href="#trajetoria">Experiência</a><a href="#contato">Contato</a>
+      </nav>
+      <div class="nav-actions"><select class="language-select" id="language" aria-label="Selecionar idioma"><option value="pt">🇧🇷 PT</option><option value="en">🇺🇸 EN</option><option value="es">🇪🇸 ES</option></select><button class="icon-btn" id="theme" aria-label="Alternar tema" title="Alternar tema"><span aria-hidden="true">◐</span></button><button class="icon-btn menu-btn" id="menu" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span aria-hidden="true">☰</span></button></div>
+    </div>
+    <nav class="mobile-menu wrap" id="mobile-menu" aria-label="Navegação móvel">
+      <a href="#sobre">Sobre</a><a href="#atuacao">Competências</a><a href="#projetos">Projetos</a><a href="#trajetoria">Experiência</a><a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero wrap" id="inicio">
+      <div data-reveal>
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Disponível para oportunidades em T.I.</div>
+        <h1><span>Software para</span><em>problemas reais.</em></h1>
+        <div class="hero-copy">
+          <div class="route" aria-hidden="true">WEB<br>MOBILE<br>APIs</div>
+          <div>
+            <p>Desenvolvo aplicações web, produtos SaaS e automações de ponta a ponta — da interface à API, banco de dados e operação.</p>
+            <div class="actions"><a class="btn btn-primary" href="#projetos">Ver projetos <span aria-hidden="true">↓</span></a><a class="btn" href="#contato">Falar comigo</a></div>
+            <p class="hero-meta">São Paulo · Remoto ou híbrido</p>
+          </div>
+        </div>
+      </div>
+      <div class="portrait-wrap" data-reveal>
+        <div class="portrait"><img src="https://i.postimg.cc/PJNttRJT/494151353-9655126271191690-7703902888335911926-n.jpg" alt="Retrato de Felipe Augusto" width="720" height="900" fetchpriority="high" referrerpolicy="no-referrer"></div>
+        <div class="coordinates"><span>Felipe Augusto</span><span>Liperaon</span></div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">Role para explorar ↓</div>
+    </section>
+
+    <section class="wrap" id="sobre">
+      <div class="section-top" data-reveal><span class="index">Sobre mim</span><div><h2>Quem sou e como trabalho</h2><p>Desenvolvedor focado em produtos digitais de ponta a ponta, com visão de negócio, qualidade operacional e atenção aos detalhes.</p></div></div>
+      <div class="about-grid" data-reveal>
+        <article class="panel"><h3>Olá, eu sou Felipe Augusto — também conhecido como Liperaon.</h3><p>Sou formado em Análise e Desenvolvimento de Sistemas, com foco em Full Stack, e construo aplicações que conectam interfaces responsivas, APIs, bancos de dados e automações. Tenho perfil proativo e experiência em ambientes dinâmicos que exigem excelência operacional.</p><p>Minha experiência com auditoria e otimização de processos fortalece minha atuação em T.I.: entendo fluxos, identifico gargalos e transformo necessidades reais em soluções digitais. A formação em aviação civil complementa esse perfil com disciplina, precisão e conformidade.</p><div class="stack" aria-label="Tecnologias"><span class="chip">TypeScript</span><span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">Python</span><span class="chip">Tailwind</span><span class="chip">Firebase</span></div></article>
+        <aside class="panel"><div class="facts"><div class="fact"><strong>Full Stack</strong><span>Frontend e backend</span></div><div class="fact"><strong>SaaS</strong><span>Produto autoral</span></div><div class="fact"><strong>B2</strong><span>Inglês</span></div><div class="fact"><strong>C1</strong><span>Espanhol</span></div></div><div class="languages"><div class="language"><span>Português</span><span>Nativo</span></div><div class="language"><span>Espanhol</span><span>C1 · Fluente</span></div><div class="language"><span>Inglês</span><span>B2 · Intermediário avançado</span></div><div class="language"><span>Catalão</span><span>Básico</span></div><div class="language"><span>Francês</span><span>Básico</span></div></div></aside>
+      </div>
+    </section>
+
+    <section class="wrap" id="atuacao">
+      <div class="section-top" data-reveal><span class="index">Competências</span><div><h2>O que faço em T.I.</h2><p>Crio, integro, automatizo e mantenho aplicações digitais completas.</p></div></div>
+      <div class="services-grid">
+        <article class="service" data-reveal><span class="service-no">01 — BUILD</span><h3>Desenvolvimento Web</h3><p>Aplicações modernas e responsivas com React no front-end e Node.js no back-end.</p></article>
+        <article class="service" data-reveal><span class="service-no">02 — AUTOMATE</span><h3>Scripts &amp; Automações</h3><p>Bots, scripts em Python e integrações com APIs para automatizar tarefas repetitivas.</p></article>
+        <article class="service" data-reveal><span class="service-no">03 — MAINTAIN</span><h3>Manutenção de Sistemas</h3><p>Controle rigoroso de dados, refatoração de código legado e correção de bugs.</p></article>
+        <article class="service" data-reveal><div><span class="service-no">04 — SOLVE</span><h3>Produto &amp; Operações</h3></div><p>Transformo fluxos reais de trabalho em ferramentas digitais claras, seguras e adequadas à rotina de quem vai utilizá-las.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="projetos">
+      <div class="section-top" data-reveal><span class="index">Projetos</span><div><h2>Soluções reais, de ponta a ponta</h2><p>Uma seleção objetiva de produtos autorais e ferramentas criadas para resolver problemas de negócio.</p></div></div>
+      <div class="projects">
+        <article class="project-featured" data-reveal>
+          <div><span class="featured-label">Projeto principal · SaaS autoral</span><h3>Ordenou</h3><p>Plataforma para restaurantes que centraliza cardápio, pedidos, PDV, pagamentos e operação de caixa e cozinha. O produto combina experiência web responsiva, aplicativo desktop e uma arquitetura multi-tenant preparada para diferentes unidades, usuários e permissões.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Next.js</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">Electron</span><span class="chip">Prisma</span></div><span class="private-note">Código-fonte privado · projeto em desenvolvimento</span></div>
+          <div class="featured-side"><a class="ordenou-preview" href="https://ordenou.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar ordenou.com"><img src="https://i.postimg.cc/mg3xXy9H/logoorroor.png" alt="Logotipo do Ordenou" width="640" height="360" loading="lazy" referrerpolicy="no-referrer"><span>Visitar ordenou.com <b aria-hidden="true">↗</b></span></a><div class="feature-line"><span>EXPERIÊNCIA</span><span>WEB + DESKTOP</span></div><div class="feature-line"><span>OPERAÇÃO</span><span>PEDIDOS, PDV E COZINHA</span></div><div class="feature-line"><span>ARQUITETURA</span><span>MULTI-TENANT</span></div></div>
+        </article>
+        <article class="project project-static" data-reveal><span class="num">02</span><div><h3>Disciplify</h3><p>Aplicativo mobile de hábitos, metas e organização pessoal. Funciona offline com SQLite, sincroniza dados com Firebase e reúne gamificação, desafios, estatísticas, lembretes, notas e uma experiência Premium.</p><div class="stack"><span class="chip">Expo</span><span class="chip">React Native</span><span class="chip">TypeScript</span><span class="chip">SQLite</span><span class="chip">Firebase</span><span class="chip">7 idiomas</span></div></div><span class="project-status">App autoral</span></article>
+        <a class="project" href="https://github.com/Liperaaon/MommysBabyCare" target="_blank" rel="noopener noreferrer" data-reveal><span class="num">03</span><div><h3>MommysBabyCare</h3><p>Aplicativo mobile para consultoras materno-infantis, com CRM, prontuários, agenda, finanças, assinatura digital e registros de antes e depois.</p><div class="stack"><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">Firebase</span><span class="chip">Offline-first</span></div></div><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="https://github.com/Liperaaon/SmartBPO" target="_blank" rel="noopener noreferrer" data-reveal><span class="num">04</span><div><h3>SmartBPO</h3><p>Assistente desktop em Python criado a partir da rotina de BPO financeiro, reunindo macros, consultas, calculadoras, metas, agenda e anotações.</p><div class="stack"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">Automação</span><span class="chip">JSON local</span></div></div><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="https://github.com/Liperaaon/Liberta-" target="_blank" rel="noopener noreferrer" data-reveal><span class="num">05</span><div><h3>Liberta</h3><p>Gestor financeiro pessoal com método 50–30–20, score gamificado, metas, controle de dívidas, indicadores econômicos e sincronização em nuvem.</p><div class="stack"><span class="chip">React</span><span class="chip">Firebase</span><span class="chip">Capacitor</span><span class="chip">Fintech</span></div></div><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="project" href="https://github.com/Liperaaon/Bots_Telegram" target="_blank" rel="noopener noreferrer" data-reveal><span class="num">06</span><div><h3>Suite de Bots para Telegram</h3><p>Conjunto de bots para atendimento, vendas, agendamentos, estoque, corridas e promoções, com fluxos adaptados a diferentes negócios.</p><div class="stack"><span class="chip">Python</span><span class="chip">Telegram API</span><span class="chip">Automação</span></div></div><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="wrap" id="trajetoria">
+      <div class="section-top" data-reveal><span class="index">Experiência</span><div><h2>Experiência profissional</h2><p>Minha trajetória em desenvolvimento, auditoria de processos, qualidade e atendimento.</p></div></div>
+      <div class="timeline">
+        <article class="role" data-reveal><time>2026 — PRESENTE</time><div><h3>Assistente de BPO Financeiro 2</h3><div class="company">Meta S/A</div><p>Inspeção e auditoria de processos, conformidade operacional, identificação de gargalos, análise de não conformidades e relatórios técnicos para melhoria contínua.</p></div></article>
+        <article class="role" data-reveal><time>2025 — PRESENTE</time><div><h3>Desenvolvedor Full Stack</h3><div class="company">Freelancer / Projetos Paralelos</div><p>Aplicações com React, Node.js e Firebase, scripts de automação, bots para Telegram e gestão das plataformas financeiras Liberta e Aura Pix, incluindo integrações com APIs.</p></div></article>
+        <article class="role" data-reveal><time>2024 — 2026</time><div><h3>Assistente de BPO Financeiro 1</h3><div class="company">Meta S/A</div><p>Análise e validação documental para processos bancários do Sicoob, verificação regulatória, prevenção de fraudes e relatórios operacionais.</p></div></article>
+        <article class="role" data-reveal><time>2023 — 2024</time><div><h3>Operador de Teleatendimento</h3><div class="company">Winover Call Center</div><p>Atendimento ao cliente e suporte técnico, desenvolvendo comunicação, empatia e resolução de problemas em ambiente dinâmico.</p></div></article>
+      </div>
+    </section>
+
+    <details class="career-more">
+      <summary class="career-summary wrap"><span class="summary-copy"><span class="summary-kicker">Trajetória complementar</span><span class="summary-title">Formação, aviação e certificados</span></span><span class="summary-icon" aria-hidden="true">+</span></summary>
+      <section class="wrap formation-section" id="formacao">
+        <div class="section-top" data-reveal><span class="index">Formação</span><div><h2>Formação acadêmica e técnica</h2></div></div>
+        <div class="edu-grid">
+        <article class="edu" data-reveal><time>JAN 2024 — JUN 2026</time><h3>Análise e Desenvolvimento de Sistemas</h3><p>Cruzeiro do Sul — São Paulo</p></article>
+        <article class="edu" data-reveal><time>CONCLUÍDO</time><h3>Agente de Aeroporto</h3><p>CEABR — Curso Profissionalizante</p></article>
+        <article class="edu" data-reveal><time>CONCLUÍDO</time><h3>Web Design &amp; Manutenção de TI</h3><p>Microlins — Formação Técnica</p></article>
+        <article class="award" data-reveal><strong>100% Goal Achievement</strong><p>Reconhecimento por superar métricas de qualidade e manter consistência nas entregas do time.</p></article>
+        </div>
+      </section>
+
+    <section class="aviation" id="aviacao">
+      <div class="wrap">
+        <div class="section-top" data-reveal><span class="index">Diferencial</span><div><h2>Formação em aviação civil</h2><p>Uma qualificação complementar que fortalece minha atenção a processos, segurança e conformidade.</p></div></div>
+        <div class="aviation-grid">
+          <p class="aviation-copy" data-reveal>Minha carreira é focada em <strong>T.I. e desenvolvimento Full Stack</strong>. Como diferencial complementar, sou certificado como Agente de Aeroporto pelo CEABR e levo para o software a mesma atenção a processos, segurança e excelência operacional exigida na aviação.</p>
+          <div class="aviation-list" data-reveal><div class="aviation-item"><span>Agente de Aeroporto</span><span>CEABR</span></div><div class="aviation-item"><span>Auditoria de Processos</span><span>Meta S/A</span></div><div class="aviation-item"><span>Segurança aeroportuária</span><span>ANAC / IATA</span></div><div class="aviation-item"><span>Operações de solo</span><span>CHECK-IN / EMBARQUE</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="certificados">
+      <div class="section-top" data-reveal><span class="index">Certificados</span><div><h2>Certificações profissionais</h2><p>Qualificações concluídas em segurança e operações da aviação civil.</p></div></div>
+      <div class="cert-grid">
+        <article class="cert" data-reveal><span class="cert-date">25/07/2026<br>4 HORAS</span><div><h3>Introdução AVSEC</h3><p>Lift Aviation Brasil · Concluído</p></div></article>
+        <article class="cert" data-reveal><span class="cert-date">24/07/2026<br>5 HORAS</span><div><h3>Peso e Balanceamento de Aeronaves a Jato</h3><p>Lift Aviation Brasil · Concluído</p></div></article>
+        <article class="cert" data-reveal><span class="cert-date">24/07/2026<br>5 HORAS</span><div><h3>Peso e Balanceamento de Aeronaves Leves</h3><p>Lift Aviation Brasil · Concluído</p></div></article>
+        <article class="cert" data-reveal><span class="cert-date">23/07/2026<br>10 HORAS</span><div><h3>Introdução a Peso e Balanceamento de Aeronaves</h3><p>SEST SENAT · Concluído</p></div></article>
+      </div>
+    </section>
+    </details>
+
+    <section class="contact wrap" id="contato">
+      <div class="contact-box" data-reveal><h2>Vamos conversar?</h2><p>Para oportunidades, projetos e serviços, escolha o canal mais conveniente.</p><div class="contact-actions"><button class="btn btn-primary" id="whatsapp-contact" type="button"><span aria-hidden="true">&#9742;</span><span>WhatsApp</span></button><button class="btn" id="email-contact" type="button"><span aria-hidden="true">&#9993;</span><span>Enviar e-mail</span></button><a class="btn" href="https://www.linkedin.com/in/liperaon/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn" href="https://github.com/Liperaaon" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+    </section>
+  </main>
+
+  <footer class="wrap"><span>© 2026 Felipe Augusto — Feito com dedicação.</span><span>São Paulo · Brasil / Full Stack · Produtos digitais</span></footer>
+
+  <script>
+    (() => {
+      const root=document.documentElement;
+      const saved=localStorage.getItem('portfolio-theme');
+      const themeButton=document.querySelector('#theme'),themeMeta=document.querySelector('meta[name="theme-color"]');
+      const applyTheme=theme=>{root.dataset.theme=theme;themeMeta.content=theme==='dark'?'#0f1115':'#f7f7f5'};
+      applyTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+      themeButton.addEventListener('click',()=>{const next=root.dataset.theme==='dark'?'light':'dark';applyTheme(next);localStorage.setItem('portfolio-theme',next)});
+      const menu=document.querySelector('#menu'),mobile=document.querySelector('#mobile-menu'),nav=document.querySelector('#nav');
+      const setMenu=open=>{mobile.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.dispatchEvent(new Event('menu-state-change'))};
+      menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+      mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){setMenu(false);menu.focus()}});
+      document.addEventListener('click',e=>{if(menu.getAttribute('aria-expanded')==='true'&&!nav.contains(e.target))setMenu(false)});
+      addEventListener('resize',()=>{if(innerWidth>920)setMenu(false)},{passive:true});
+      const reveals=document.querySelectorAll('[data-reveal]');
+      if(matchMedia('(prefers-reduced-motion: reduce)').matches) reveals.forEach(el=>el.classList.add('visible')); else {const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:.12});reveals.forEach(el=>ro.observe(el))}
+      const sectionLinks=[...document.querySelectorAll('.links a,#mobile-menu a')],sections=[...document.querySelectorAll('main section[id]')];
+      const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)sectionLinks.forEach(a=>a.setAttribute('aria-current',a.hash==='#'+e.target.id?'true':'false'))}),{rootMargin:'-35% 0px -55%'});sections.forEach(s=>so.observe(s));
+      const careerMore=document.querySelector('.career-more');
+      const revealCareerTarget=()=>{if(['#formacao','#aviacao','#certificados'].includes(location.hash))careerMore.open=true};
+      revealCareerTarget();addEventListener('hashchange',revealCareerTarget);
+      const commercial=['55','11','99243','9669'].join('');
+      const email=['felipe','_mx','@','hotmail','.com'].join('');
+      const contactCopy={pt:{message:'Olá, Felipe! Vim pelo seu portfólio e gostaria de conversar.',subject:'Contato pelo portfólio'},en:{message:'Hi, Felipe! I found you through your portfolio and would like to talk.',subject:'Portfolio contact'},es:{message:'¡Hola, Felipe! Encontré tu portafolio y me gustaría conversar.',subject:'Contacto desde el portafolio'}};
+      const activeContactCopy=()=>contactCopy[document.querySelector('#language').value]||contactCopy.pt;
+      document.querySelector('#whatsapp-contact').addEventListener('click',()=>{window.open(`https://wa.me/${commercial}?text=${encodeURIComponent(activeContactCopy().message)}`,'_blank','noopener')});
+      document.querySelector('#email-contact').addEventListener('click',()=>{window.location.href=`mailto:${email}?subject=${encodeURIComponent(activeContactCopy().subject)}`});
+    })();
+  </script>
+  <script>
+(() => {
+  const translations = {
+    en: {
+      "Pular para o conteúdo": "Skip to content",
+      "Sobre": "About",
+      "Competências": "Skills",
+      "Projetos": "Projects",
+      "Experiência": "Experience",
+      "Contato": "Contact",
+      "Disponível para oportunidades em T.I.": "Open to technology opportunities",
+      "AUTOMAÇÃO": "AUTOMATION",
+      "Software para": "Software for",
+      "problemas reais.": "real problems.",
+      "Desenvolvo aplicações web, produtos SaaS e automações de ponta a ponta — da interface à API, banco de dados e operação.": "I build end-to-end web applications, SaaS products and automation — from interface to API, database and operations.",
+      "Ver projetos": "View projects",
+      "Falar comigo": "Contact me",
+      "São Paulo · Remoto ou híbrido": "São Paulo · Remote or hybrid",
+      "Role para explorar ↓": "Scroll to explore ↓",
+      "Sobre mim": "About me",
+      "Quem sou e como trabalho": "Who I am and how I work",
+      "Desenvolvedor focado em produtos digitais de ponta a ponta, com visão de negócio, qualidade operacional e atenção aos detalhes.": "Developer focused on end-to-end digital products, combining business awareness, operational quality and attention to detail.",
+      "Olá, eu sou Felipe Augusto — também conhecido como Liperaon.": "Hi, I am Felipe Augusto — also known as Liperaon.",
+      "Sou formado em Análise e Desenvolvimento de Sistemas, com foco em Full Stack, e construo aplicações que conectam interfaces responsivas, APIs, bancos de dados e automações. Tenho perfil proativo e experiência em ambientes dinâmicos que exigem excelência operacional.": "I hold a degree in Systems Analysis and Development, with a Full Stack focus, and build applications that connect responsive interfaces, APIs, databases and automation. I am proactive and experienced in dynamic environments that demand operational excellence.",
+      "Minha experiência com auditoria e otimização de processos fortalece minha atuação em T.I.: entendo fluxos, identifico gargalos e transformo necessidades reais em soluções digitais. A formação em aviação civil complementa esse perfil com disciplina, precisão e conformidade.": "My experience in process auditing and optimization strengthens my work in technology: I understand workflows, identify bottlenecks and turn real needs into digital solutions. My civil aviation training complements this profile with discipline, precision and compliance.",
+      "Frontend e backend": "Frontend and backend",
+      "Produto autoral": "Original product",
+      "Inglês": "English",
+      "Espanhol": "Spanish",
+      "Português": "Portuguese",
+      "Catalão": "Catalan",
+      "Francês": "French",
+      "Básico": "Basic",
+      "Nativo": "Native",
+      "C1 · Fluente": "C1 · Fluent",
+      "B2 · Intermediário avançado": "B2 · Upper-intermediate",
+      "O que faço em T.I.": "What I do in technology",
+      "Crio, integro, automatizo e mantenho aplicações digitais completas.": "I build, integrate, automate and maintain complete digital applications.",
+      "Desenvolvimento Web": "Web Development",
+      "Aplicações modernas e responsivas com React no front-end e Node.js no back-end.": "Modern, responsive applications with React on the frontend and Node.js on the backend.",
+      "Scripts & Automações": "Scripts & Automation",
+      "Bots, scripts em Python e integrações com APIs para automatizar tarefas repetitivas.": "Bots, Python scripts and API integrations that automate repetitive tasks.",
+      "Manutenção de Sistemas": "Systems Maintenance",
+      "Controle rigoroso de dados, refatoração de código legado e correção de bugs.": "Careful data control, legacy-code refactoring and bug fixing.",
+      "Produto & Operações": "Product & Operations",
+      "Transformo fluxos reais de trabalho em ferramentas digitais claras, seguras e adequadas à rotina de quem vai utilizá-las.": "I turn real workflows into clear, secure digital tools designed for the people who use them.",
+      "Soluções reais, de ponta a ponta": "Real solutions, end to end",
+      "Uma seleção objetiva de produtos autorais e ferramentas criadas para resolver problemas de negócio.": "A focused selection of original products and tools built to solve business problems.",
+      "Projeto principal · SaaS autoral": "Main project · Original SaaS",
+      "Plataforma para restaurantes que centraliza cardápio, pedidos, PDV, pagamentos e operação de caixa e cozinha. O produto combina experiência web responsiva, aplicativo desktop e uma arquitetura multi-tenant preparada para diferentes unidades, usuários e permissões.": "A restaurant platform that centralizes menus, orders, POS, payments, cashier and kitchen operations. It combines a responsive web experience, a desktop app and a multi-tenant architecture for multiple locations, users and permissions.",
+      "Código-fonte privado · projeto em desenvolvimento": "Private source code · project in development",
+      "Visitar ordenou.com": "Visit ordenou.com",
+      "EXPERIÊNCIA": "EXPERIENCE",
+      "OPERAÇÃO": "OPERATIONS",
+      "PEDIDOS, PDV E COZINHA": "ORDERS, POS & KITCHEN",
+      "ARQUITETURA": "ARCHITECTURE",
+      "Aplicativo mobile de hábitos, metas e organização pessoal. Funciona offline com SQLite, sincroniza dados com Firebase e reúne gamificação, desafios, estatísticas, lembretes, notas e uma experiência Premium.": "A mobile app for habits, goals and personal organization. It works offline with SQLite, syncs through Firebase and combines gamification, challenges, statistics, reminders, notes and a Premium experience.",
+      "7 idiomas": "7 languages",
+      "App autoral": "Original app",
+      "Aplicativo mobile para consultoras materno-infantis, com CRM, prontuários, agenda, finanças, assinatura digital e registros de antes e depois.": "A mobile app for maternal and child health consultants, with CRM, patient records, scheduling, finance, digital signatures and before-and-after records.",
+      "Assistente desktop em Python criado a partir da rotina de BPO financeiro, reunindo macros, consultas, calculadoras, metas, agenda e anotações.": "A Python desktop assistant created from financial BPO workflows, bringing together macros, research links, calculators, goals, scheduling and notes.",
+      "Automação": "Automation",
+      "Gestor financeiro pessoal com método 50–30–20, score gamificado, metas, controle de dívidas, indicadores econômicos e sincronização em nuvem.": "A personal finance manager using the 50–30–20 method, with a gamified score, goals, debt management, economic indicators and cloud sync.",
+      "Suite de Bots para Telegram": "Telegram Bot Suite",
+      "Conjunto de bots para atendimento, vendas, agendamentos, estoque, corridas e promoções, com fluxos adaptados a diferentes negócios.": "A suite of bots for support, sales, scheduling, inventory, rides and promotions, with workflows tailored to different businesses.",
+      "Experiência profissional": "Professional experience",
+      "Minha trajetória em desenvolvimento, auditoria de processos, qualidade e atendimento.": "My background in development, process auditing, quality and customer service.",
+      "Trajetória complementar": "Additional background",
+      "Formação, aviação e certificados": "Education, aviation and certificates",
+      "2026 — PRESENTE": "2026 — PRESENT",
+      "Assistente de BPO Financeiro 2": "Financial BPO Assistant II",
+      "Inspeção e auditoria de processos, conformidade operacional, identificação de gargalos, análise de não conformidades e relatórios técnicos para melhoria contínua.": "Process inspection and auditing, operational compliance, bottleneck identification, nonconformity analysis and technical reporting for continuous improvement.",
+      "2025 — PRESENTE": "2025 — PRESENT",
+      "Desenvolvedor Full Stack": "Full Stack Developer",
+      "Freelancer / Projetos Paralelos": "Freelance / Independent Projects",
+      "Aplicações com React, Node.js e Firebase, scripts de automação, bots para Telegram e gestão das plataformas financeiras Liberta e Aura Pix, incluindo integrações com APIs.": "Applications built with React, Node.js and Firebase, automation scripts, Telegram bots and development of the Liberta and Aura Pix financial platforms, including API integrations.",
+      "Assistente de BPO Financeiro 1": "Financial BPO Assistant I",
+      "Análise e validação documental para processos bancários do Sicoob, verificação regulatória, prevenção de fraudes e relatórios operacionais.": "Document analysis and validation for Sicoob banking processes, regulatory checks, fraud prevention and operational reporting.",
+      "Operador de Teleatendimento": "Customer Service Representative",
+      "Atendimento ao cliente e suporte técnico, desenvolvendo comunicação, empatia e resolução de problemas em ambiente dinâmico.": "Customer service and technical support, developing communication, empathy and problem-solving skills in a dynamic environment.",
+      "Formação": "Education",
+      "Formação acadêmica e técnica": "Academic and technical education",
+      "Análise e Desenvolvimento de Sistemas": "Systems Analysis and Development",
+      "CONCLUÍDO": "COMPLETED",
+      "Agente de Aeroporto": "Airport Agent",
+      "CEABR — Curso Profissionalizante": "CEABR — Professional Course",
+      "Web Design & Manutenção de TI": "Web Design & IT Maintenance",
+      "Microlins — Formação Técnica": "Microlins — Technical Training",
+      "Reconhecimento por superar métricas de qualidade e manter consistência nas entregas do time.": "Recognition for exceeding quality targets and delivering consistently with the team.",
+      "Diferencial": "Additional qualification",
+      "Formação em aviação civil": "Civil aviation training",
+      "Uma qualificação complementar que fortalece minha atenção a processos, segurança e conformidade.": "Additional training that strengthens my focus on processes, safety and compliance.",
+      "Minha carreira é focada em": "My career is focused on",
+      "T.I. e desenvolvimento Full Stack": "technology and Full Stack development",
+      ". Como diferencial complementar, sou certificado como Agente de Aeroporto pelo CEABR e levo para o software a mesma atenção a processos, segurança e excelência operacional exigida na aviação.": ". As an additional qualification, I am certified as an Airport Agent by CEABR and bring to software the same attention to processes, safety and operational excellence required in aviation.",
+      "Auditoria de Processos": "Process Auditing",
+      "Segurança aeroportuária": "Airport Security",
+      "Operações de solo": "Ground Operations",
+      "CHECK-IN / EMBARQUE": "CHECK-IN / BOARDING",
+      "Certificados": "Certificates",
+      "Certificações profissionais": "Professional certifications",
+      "Qualificações concluídas em segurança e operações da aviação civil.": "Completed qualifications in civil aviation safety and operations.",
+      "4 HORAS": "4 HOURS",
+      "5 HORAS": "5 HOURS",
+      "10 HORAS": "10 HOURS",
+      "Introdução AVSEC": "Introduction to AVSEC",
+      "Lift Aviation Brasil · Concluído": "Lift Aviation Brasil · Completed",
+      "Peso e Balanceamento de Aeronaves a Jato": "Jet Aircraft Weight and Balance",
+      "Peso e Balanceamento de Aeronaves Leves": "Light Aircraft Weight and Balance",
+      "Introdução a Peso e Balanceamento de Aeronaves": "Introduction to Aircraft Weight and Balance",
+      "SEST SENAT · Concluído": "SEST SENAT · Completed",
+      "Vamos conversar?": "Let’s talk?",
+      "Para oportunidades, projetos e serviços, escolha o canal mais conveniente.": "For opportunities, projects and services, choose the most convenient channel.",
+      "Enviar e-mail": "Send email",
+      "© 2026 Felipe Augusto — Feito com dedicação.": "© 2026 Felipe Augusto — Made with dedication.",
+      "São Paulo · Brasil / Full Stack · Produtos digitais": "São Paulo · Brazil / Full Stack · Digital products"
+    },
+    es: {
+      "Pular para o conteúdo": "Saltar al contenido",
+      "Sobre": "Sobre mí",
+      "Competências": "Competencias",
+      "Projetos": "Proyectos",
+      "Experiência": "Experiencia",
+      "Contato": "Contacto",
+      "Disponível para oportunidades em T.I.": "Disponible para oportunidades en tecnología",
+      "AUTOMAÇÃO": "AUTOMATIZACIÓN",
+      "Software para": "Software para",
+      "problemas reais.": "problemas reales.",
+      "Desenvolvo aplicações web, produtos SaaS e automações de ponta a ponta — da interface à API, banco de dados e operação.": "Desarrollo aplicaciones web, productos SaaS y automatizaciones de principio a fin: desde la interfaz hasta la API, la base de datos y la operación.",
+      "Ver projetos": "Ver proyectos",
+      "Falar comigo": "Contactar",
+      "São Paulo · Remoto ou híbrido": "São Paulo · Remoto o híbrido",
+      "Role para explorar ↓": "Desplázate para explorar ↓",
+      "Sobre mim": "Sobre mí",
+      "Quem sou e como trabalho": "Quién soy y cómo trabajo",
+      "Desenvolvedor focado em produtos digitais de ponta a ponta, com visão de negócio, qualidade operacional e atenção aos detalhes.": "Desarrollador enfocado en productos digitales de punta a punta, con visión de negocio, calidad operativa y atención al detalle.",
+      "Olá, eu sou Felipe Augusto — também conhecido como Liperaon.": "Hola, soy Felipe Augusto, también conocido como Liperaon.",
+      "Sou formado em Análise e Desenvolvimento de Sistemas, com foco em Full Stack, e construo aplicações que conectam interfaces responsivas, APIs, bancos de dados e automações. Tenho perfil proativo e experiência em ambientes dinâmicos que exigem excelência operacional.": "Soy graduado en Análisis y Desarrollo de Sistemas, con enfoque Full Stack, y creo aplicaciones que conectan interfaces adaptables, APIs, bases de datos y automatizaciones. Tengo un perfil proactivo y experiencia en entornos dinámicos que exigen excelencia operativa.",
+      "Minha experiência com auditoria e otimização de processos fortalece minha atuação em T.I.: entendo fluxos, identifico gargalos e transformo necessidades reais em soluções digitais. A formação em aviação civil complementa esse perfil com disciplina, precisão e conformidade.": "Mi experiencia en auditoría y optimización de procesos fortalece mi trabajo en tecnología: comprendo flujos, identifico cuellos de botella y transformo necesidades reales en soluciones digitales. Mi formación en aviación civil complementa este perfil con disciplina, precisión y cumplimiento.",
+      "Frontend e backend": "Frontend y backend",
+      "Produto autoral": "Producto propio",
+      "Inglês": "Inglés",
+      "Espanhol": "Español",
+      "Português": "Portugués",
+      "Catalão": "Catalán",
+      "Francês": "Francés",
+      "Básico": "Básico",
+      "Nativo": "Nativo",
+      "C1 · Fluente": "C1 · Fluido",
+      "B2 · Intermediário avançado": "B2 · Intermedio alto",
+      "O que faço em T.I.": "Lo que hago en tecnología",
+      "Crio, integro, automatizo e mantenho aplicações digitais completas.": "Creo, integro, automatizo y mantengo aplicaciones digitales completas.",
+      "Desenvolvimento Web": "Desarrollo web",
+      "Aplicações modernas e responsivas com React no front-end e Node.js no back-end.": "Aplicaciones modernas y adaptables con React en el frontend y Node.js en el backend.",
+      "Scripts & Automações": "Scripts y automatizaciones",
+      "Bots, scripts em Python e integrações com APIs para automatizar tarefas repetitivas.": "Bots, scripts en Python e integraciones con APIs para automatizar tareas repetitivas.",
+      "Manutenção de Sistemas": "Mantenimiento de sistemas",
+      "Controle rigoroso de dados, refatoração de código legado e correção de bugs.": "Control riguroso de datos, refactorización de código heredado y corrección de errores.",
+      "Produto & Operações": "Producto y operaciones",
+      "Transformo fluxos reais de trabalho em ferramentas digitais claras, seguras e adequadas à rotina de quem vai utilizá-las.": "Transformo flujos reales de trabajo en herramientas digitales claras, seguras y adecuadas para las personas que las utilizan.",
+      "Soluções reais, de ponta a ponta": "Soluciones reales, de punta a punta",
+      "Uma seleção objetiva de produtos autorais e ferramentas criadas para resolver problemas de negócio.": "Una selección concreta de productos propios y herramientas creadas para resolver problemas de negocio.",
+      "Projeto principal · SaaS autoral": "Proyecto principal · SaaS propio",
+      "Plataforma para restaurantes que centraliza cardápio, pedidos, PDV, pagamentos e operação de caixa e cozinha. O produto combina experiência web responsiva, aplicativo desktop e uma arquitetura multi-tenant preparada para diferentes unidades, usuários e permissões.": "Plataforma para restaurantes que centraliza menú, pedidos, TPV, pagos y operaciones de caja y cocina. Combina una experiencia web adaptable, una aplicación de escritorio y una arquitectura multiempresa para diferentes locales, usuarios y permisos.",
+      "Código-fonte privado · projeto em desenvolvimento": "Código fuente privado · proyecto en desarrollo",
+      "Visitar ordenou.com": "Visitar ordenou.com",
+      "EXPERIÊNCIA": "EXPERIENCIA",
+      "OPERAÇÃO": "OPERACIONES",
+      "PEDIDOS, PDV E COZINHA": "PEDIDOS, TPV Y COCINA",
+      "ARQUITETURA": "ARQUITECTURA",
+      "Aplicativo mobile de hábitos, metas e organização pessoal. Funciona offline com SQLite, sincroniza dados com Firebase e reúne gamificação, desafios, estatísticas, lembretes, notas e uma experiência Premium.": "Aplicación móvil de hábitos, metas y organización personal. Funciona sin conexión con SQLite, sincroniza datos mediante Firebase y reúne gamificación, desafíos, estadísticas, recordatorios, notas y una experiencia Premium.",
+      "7 idiomas": "7 idiomas",
+      "App autoral": "App propia",
+      "Aplicativo mobile para consultoras materno-infantis, com CRM, prontuários, agenda, finanças, assinatura digital e registros de antes e depois.": "Aplicación móvil para consultoras maternoinfantiles, con CRM, historiales, agenda, finanzas, firma digital y registros de antes y después.",
+      "Assistente desktop em Python criado a partir da rotina de BPO financeiro, reunindo macros, consultas, calculadoras, metas, agenda e anotações.": "Asistente de escritorio en Python creado a partir de la rutina de BPO financiero, reuniendo macros, consultas, calculadoras, metas, agenda y notas.",
+      "Automação": "Automatización",
+      "Gestor financeiro pessoal com método 50–30–20, score gamificado, metas, controle de dívidas, indicadores econômicos e sincronização em nuvem.": "Gestor de finanzas personales con el método 50–30–20, puntuación gamificada, metas, control de deudas, indicadores económicos y sincronización en la nube.",
+      "Suite de Bots para Telegram": "Suite de bots para Telegram",
+      "Conjunto de bots para atendimento, vendas, agendamentos, estoque, corridas e promoções, com fluxos adaptados a diferentes negócios.": "Conjunto de bots para atención, ventas, reservas, inventario, viajes y promociones, con flujos adaptados a distintos negocios.",
+      "Experiência profissional": "Experiencia profesional",
+      "Minha trajetória em desenvolvimento, auditoria de processos, qualidade e atendimento.": "Mi trayectoria en desarrollo, auditoría de procesos, calidad y atención al cliente.",
+      "Trajetória complementar": "Trayectoria complementaria",
+      "Formação, aviação e certificados": "Formación, aviación y certificados",
+      "2026 — PRESENTE": "2026 — ACTUALIDAD",
+      "Assistente de BPO Financeiro 2": "Asistente de BPO financiero II",
+      "Inspeção e auditoria de processos, conformidade operacional, identificação de gargalos, análise de não conformidades e relatórios técnicos para melhoria contínua.": "Inspección y auditoría de procesos, cumplimiento operativo, identificación de cuellos de botella, análisis de no conformidades e informes técnicos para la mejora continua.",
+      "2025 — PRESENTE": "2025 — ACTUALIDAD",
+      "Desenvolvedor Full Stack": "Desarrollador Full Stack",
+      "Freelancer / Projetos Paralelos": "Freelance / Proyectos independientes",
+      "Aplicações com React, Node.js e Firebase, scripts de automação, bots para Telegram e gestão das plataformas financeiras Liberta e Aura Pix, incluindo integrações com APIs.": "Aplicaciones con React, Node.js y Firebase, scripts de automatización, bots para Telegram y desarrollo de las plataformas financieras Liberta y Aura Pix, incluidas integraciones con APIs.",
+      "Assistente de BPO Financeiro 1": "Asistente de BPO financiero I",
+      "Análise e validação documental para processos bancários do Sicoob, verificação regulatória, prevenção de fraudes e relatórios operacionais.": "Análisis y validación documental para procesos bancarios de Sicoob, verificación regulatoria, prevención del fraude e informes operativos.",
+      "Operador de Teleatendimento": "Agente de atención al cliente",
+      "Atendimento ao cliente e suporte técnico, desenvolvendo comunicação, empatia e resolução de problemas em ambiente dinâmico.": "Atención al cliente y soporte técnico, desarrollando comunicación, empatía y resolución de problemas en un entorno dinámico.",
+      "Formação": "Formación",
+      "Formação acadêmica e técnica": "Formación académica y técnica",
+      "JAN 2024 — JUN 2026": "ENE 2024 — JUN 2026",
+      "Análise e Desenvolvimento de Sistemas": "Análisis y Desarrollo de Sistemas",
+      "CONCLUÍDO": "COMPLETADO",
+      "Agente de Aeroporto": "Agente de aeropuerto",
+      "CEABR — Curso Profissionalizante": "CEABR — Curso profesional",
+      "Web Design & Manutenção de TI": "Diseño web y mantenimiento de TI",
+      "Microlins — Formação Técnica": "Microlins — Formación técnica",
+      "Reconhecimento por superar métricas de qualidade e manter consistência nas entregas do time.": "Reconocimiento por superar los objetivos de calidad y mantener la consistencia en las entregas del equipo.",
+      "Diferencial": "Formación complementaria",
+      "Formação em aviação civil": "Formación en aviación civil",
+      "Uma qualificação complementar que fortalece minha atenção a processos, segurança e conformidade.": "Una formación complementaria que refuerza mi atención a los procesos, la seguridad y el cumplimiento.",
+      "Minha carreira é focada em": "Mi carrera está enfocada en",
+      "T.I. e desenvolvimento Full Stack": "tecnología y desarrollo Full Stack",
+      ". Como diferencial complementar, sou certificado como Agente de Aeroporto pelo CEABR e levo para o software a mesma atenção a processos, segurança e excelência operacional exigida na aviação.": ". Como formación complementaria, estoy certificado como Agente de Aeropuerto por CEABR y llevo al software la misma atención a los procesos, la seguridad y la excelencia operativa que exige la aviación.",
+      "Auditoria de Processos": "Auditoría de procesos",
+      "Segurança aeroportuária": "Seguridad aeroportuaria",
+      "Operações de solo": "Operaciones en tierra",
+      "Certificados": "Certificados",
+      "Certificações profissionais": "Certificaciones profesionales",
+      "Qualificações concluídas em segurança e operações da aviação civil.": "Formaciones completadas en seguridad y operaciones de aviación civil.",
+      "Introdução AVSEC": "Introducción a AVSEC",
+      "Lift Aviation Brasil · Concluído": "Lift Aviation Brasil · Completado",
+      "Peso e Balanceamento de Aeronaves a Jato": "Peso y balance de aeronaves a reacción",
+      "Peso e Balanceamento de Aeronaves Leves": "Peso y balance de aeronaves ligeras",
+      "Introdução a Peso e Balanceamento de Aeronaves": "Introducción al peso y balance de aeronaves",
+      "SEST SENAT · Concluído": "SEST SENAT · Completado",
+      "Vamos conversar?": "¿Hablamos?",
+      "Para oportunidades, projetos e serviços, escolha o canal mais conveniente.": "Para oportunidades, proyectos y servicios, elige el canal más conveniente.",
+      "Enviar e-mail": "Enviar correo",
+      "© 2026 Felipe Augusto — Feito com dedicação.": "© 2026 Felipe Augusto — Hecho con dedicación.",
+      "São Paulo · Brasil / Full Stack · Produtos digitais": "São Paulo · Brasil / Full Stack · Productos digitales"
+    }
+  };
+
+  const labels = {
+    pt: {lang:"pt-BR", language:"Selecionar idioma", theme:"Alternar tema", openMenu:"Abrir menu", closeMenu:"Fechar menu", mainNav:"Navegação principal", mobileNav:"Navegação móvel", brand:"Felipe Augusto — início", meta:"Produtos digitais, APIs e automações construídos de ponta a ponta."},
+    en: {lang:"en", language:"Select language", theme:"Toggle theme", openMenu:"Open menu", closeMenu:"Close menu", mainNav:"Main navigation", mobileNav:"Mobile navigation", brand:"Felipe Augusto — home", meta:"End-to-end digital products, APIs and automation."},
+    es: {lang:"es", language:"Seleccionar idioma", theme:"Cambiar tema", openMenu:"Abrir menú", closeMenu:"Cerrar menú", mainNav:"Navegación principal", mobileNav:"Navegación móvil", brand:"Felipe Augusto — inicio", meta:"Productos digitales, APIs y automatizaciones creados de punta a punta."}
+  };
+
+  const select = document.querySelector("#language");
+  if (!select) return;
+
+  const textNodes = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const parent = node.parentElement;
+      if (!parent || ["SCRIPT", "STYLE"].includes(parent.tagName) || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    textNodes.push({node, original: node.nodeValue, key: node.nodeValue.trim()});
+  }
+
+  let locale = "pt";
+  const syncAccessibility = () => {
+    const copy = labels[locale];
+    const menu = document.querySelector("#menu");
+    document.documentElement.lang = copy.lang;
+    select.setAttribute("aria-label", copy.language);
+    document.querySelector("#theme").setAttribute("aria-label", copy.theme);
+    document.querySelector("#theme").title = copy.theme;
+    menu.setAttribute("aria-label", menu.getAttribute("aria-expanded") === "true" ? copy.closeMenu : copy.openMenu);
+    document.querySelector(".links").setAttribute("aria-label", copy.mainNav);
+    document.querySelector("#mobile-menu").setAttribute("aria-label", copy.mobileNav);
+    document.querySelector(".brand").setAttribute("aria-label", copy.brand);
+    document.querySelector('meta[name="description"]').content = copy.meta;
+  };
+
+  const applyLocale = requestedLocale => {
+    locale = ["pt", "en", "es"].includes(requestedLocale) ? requestedLocale : "pt";
+    const dictionary = translations[locale] || {};
+    textNodes.forEach(({node, original, key}) => {
+      node.nodeValue = original.replace(key, dictionary[key] || key);
+    });
+    select.value = locale;
+    syncAccessibility();
+    localStorage.setItem("portfolio-language", locale);
+  };
+
+  select.addEventListener("change", event => applyLocale(event.target.value));
+  document.querySelector("#menu").addEventListener("menu-state-change", syncAccessibility);
+  document.querySelectorAll("#mobile-menu a").forEach(link => link.addEventListener("click", () => setTimeout(syncAccessibility, 0)));
+  applyLocale(localStorage.getItem("portfolio-language") || "pt");
+})();
+
+  </script>
+</body>
+</html>
